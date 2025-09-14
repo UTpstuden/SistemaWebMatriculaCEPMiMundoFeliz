@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estudiar Aquí</title>
+  <link rel="stylesheet" href="css/estudiar-aqui.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#07132B",
+            secondary: "#4A90E2",
+            accent: "#FF6B35",
+            neutral: {
+              50: "#FFFFFF",
+              100: "#F5F5F5",
+              200: "#E5E5E5",
+              800: "#333333",
+            },
+          },
+          fontFamily: {
+            poppins: ["Poppins", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="font-poppins bg-white">
+  <!-- Header -->
+  <header id="header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/90 backdrop-blur-sm">
+    <nav class="container mx-auto px-4 py-4">
+      <div class="flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center space-x-3 cursor-pointer" onclick="navigateTo('home')">
+          <div class="bg-primary text-white p-2 rounded-lg">
+            <i class="fas fa-graduation-cap text-xl"></i>
+          </div>
+          <div>
+            <h1 class="text-lg font-bold text-primary">CEP MI MUNDO FELIZ</h1>
+            <p class="text-xs text-neutral-800">
+              Formando mentes, transformando vidas
+            </p>
+          </div>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center space-x-8">
+          <a href="index.html#hero" class="nav-link active">Inicio</a>
+          <a href="index.html#nosotros" class="nav-link">Nosotros</a>
+          <a href="blog.html" class="nav-link">Blog</a>
+          <a href="estudiar-aqui.html" class="nav-link">¿Porque estudiar aquí?</a>
+          <a href="index.html#contacto" class="nav-link">Contacto</a>
+          <a href="index.html#matricula" class="nav-link">Matrícula</a>
+          <a href="index.html#login-modal" class="btn-primary px-6 py-2">
+            <i class="fas fa-sign-in-alt mr-2"></i>Iniciar Sesión
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="lg:hidden text-primary" onclick="toggleMobileMenu()">
+          <i class="fas fa-bars text-xl" id="menu-icon"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="lg:hidden mt-4 pb-4 border-t border-neutral-200 hidden">
+        <div class="flex flex-col space-y-4 mt-4">
+          <a href="index.html#hero" class="nav-link-mobile">Inicio</a>
+          <a href="index.html#nosotros" class="nav-link-mobile">Nosotros</a>
+          <a href="blog.html" class="nav-link-mobile">Blog</a>
+          <a href="estudiar-aqui.html" class="nav-link-mobile">Porque estudiar aquí</a>
+          <a href="index.html#contacto" class="nav-link-mobile">Contacto</a>
+          <a href="index.html#matricula" class="nav-link-mobile">Matrícula</a>
+          <a href="index.html#login-modal" class="btn-primary w-full py-3 mt-4">
+            <i class="fas fa-sign-in-alt mr-2"></i>Iniciar Sesión
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main style="padding-top: 80px;">
+
+    <section class="hero">
+      <div class="overlay">
+        <img
+          src="https://media.istockphoto.com/id/1460754251/es/foto/escolares-haciendo-ejercicio-durante-las-vacaciones-recreativas.jpg?s=612x612&w=0&k=20&c=hzwKkqFnp8R4qRTOLPd7jgZhVTttHrvnkGys0kyJWs8="
+          alt="Fondo colegio">
+      </div>
+      <div class="hero-content">
+        <img
+          src="https://images.vexels.com/media/users/3/224234/isolated/preview/ff7c525c1c3e1bef640644542001e1fd-logotipo-de-la-escuela-en-linea.png"
+          alt="Colegio San Pedro" class="hero-logo">
+        <h1>Formación Integral y<br>Excelencia Académica</h1>
+        <p>
+          Elegir el mejor colegio para sus hijos<br>
+          es una de las decisiones más importantes que debe tomar una familia.
+        </p>
+        <a href="#formacion" class="arrow">⬇</a>
+      </div>
+    </section>
+
+    <section id="formacion" class="section">
+      <img src="https://mytgf.neocities.org/Por%20que%20estudiar%20aqui/img/formacion%20integral.jpg"
+        alt="Alumno en clase">
+      <div class="section-text">
+        <h2>Formación integral</h2>
+        <p>
+          En <strong>San Pedro</strong>, nos enfocamos en una educación que se basa en el perfeccionamiento de las
+          diferentes dimensiones de la persona,
+          <strong>asegurando un desarrollo equilibrado y completo.</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="educacion">
+      <div class="container">
+        <h2 class="section-title">Nuestra propuesta educativa</h2>
+
+        <div class="section2">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/f-2ejfy4Zy4" title="Video YouTube" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="section-text">
+            <h3>Despertando potenciales desde Early Years</h3>
+            <p>
+              Fomentamos el crecimiento desde los primeros años en un ambiente seguro y estimulante.
+              Por eso ofrecemos un enfoque que se centra en:
+            </p>
+            <ul>
+              <li>La inmersión temprana en el idioma inglés de forma sólida y lúdica.</li>
+              <li>La colaboración estrecha con los padres y el acompañamiento personalizado.</li>
+              <li>Una amplia gama de talleres extracurriculares desde el Nido (Nursery).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section2">
+          <div class="section-text">
+            <h3>Educación de calidad para futuros líderes</h3>
+            <p>
+              Nuestra propuesta va más allá de los estándares tradicionales...
+            </p>
+            <ul>
+              <li>Programa académico con sentido ético y apertura a la trascendencia.</li>
+              <li>El IB en San Pedro estimula madurez y aprendizaje autónomo.</li>
+              <li>Alentamos la autonomía y fomentamos el pensamiento crítico.</li>
+            </ul>
+          </div>
+          <img src="https://sanpedro.vc-sp.edu.pe/wp-content/uploads/2023/06/VCSP-Logo-IB.png" alt="IB Logo">
+        </div>
+
+        <div class="section2">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/f-2ejfy4Zy4" title="Video YouTube" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="section-text">
+            <h3>En sintonía con la era digital</h3>
+            <p>
+              En San Pedro, la tecnología es un medio para resolver problemas y transformar realidades,
+              adiestrando a nuestros alumnos para un mundo inmerso en ella:
+            </p>
+            <ul>
+              <li>Tecnología aplicada a proyectos con propósitos específicos, transformando y mejorando realidades.</li>
+              <li>Desarrollo de habilidades como la paciencia, la resiliencia y la solidaridad a través de la resolución
+                de problemas.</li>
+              <li>Fomento de la creatividad y el pensamiento crítico en la búsqueda de soluciones a problemas concretos.
+              </li>
+              <li>Espacio de trabajo colaborativo equipado con tecnología de vanguardia, promoviendo la innovación.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="video-section">
+      <div class="container">
+        <div class="video-containe">
+          <h2 class="section-title">Conoce Nuestra Comunidad</h2>
+          <p style="text-align: center; color: #666; font-size: 1.1rem; margin-bottom: 40px;">
+            Descubre la experiencia educativa que transforma vidas
+          </p>
+
+          <div class="video-placeholder" onclick="playVideo()">
+            <div class="video-overlay">
+              <div class="play-button"></div>
+              <div class="video-title">Video Institucional - Colegio</div>
+            </div>
+          </div>
+
+          <div class="video-frame" id="videoFrame" style="display:none; margin-top:20px;text-align: center; ">
+            <iframe src="" title="Video Institucional - Colegio San Pedro" frameborder="0" width="800" height="500"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="values-section fade-in" id="valores">
+      <div class="container">
+        <h2 class="section-title">Nuestros Pilares Fundamentales</h2>
+        <p
+          style="text-align: center; color: #666; font-size: 1.1rem; margin-bottom: 60px; max-width: 600px; margin-left: auto; margin-right: auto;">
+          Cuatro pilares que guían nuestra misión educativa y forman el carácter de nuestros estudiantes
+        </p>
+        <div class="values-grid">
+          <div class="value-card">
+            <h3>♥ Formación Católica Basada en Valores</h3>
+            <p>Buscamos que la educación que brindamos esté alineada con los valores familiares de nuestra comunidad,
+              siendo esenciales para formar hombres íntegros. Se reflejan en cada aspecto de nuestra enseñanza,
+              proporcionando a nuestros estudiantes una base sólida para su futuro.</p>
+          </div>
+          <div class="value-card">
+            <h3>📖 Formación Espiritual Católica</h3>
+            <p>Fomentamos una profunda conexión con la fe y la espiritualidad. Nuestros alumnos aprenden a vivir los
+              valores cristianos en su vida diaria, profundizando en las enseñanzas de la Iglesia y fortaleciendo su
+              relación con Dios.</p>
+          </div>
+          <div class="value-card">
+            <h3>🏆 Excelencia Académica y Personal</h3>
+            <p>Alentamos un amor por el aprendizaje. Nuestros estudiantes desarrollan habilidades críticas y creativas,
+              aprenden a tomar decisiones informadas y conscientes, y se preparan para los desafíos del mundo académico
+              y profesional.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials-section fade-in" id="testimonios">
+      <div class="container">
+        <h2 class="section-title">Testimonios de Nuestra Comunidad</h2>
+        <p style="text-align: center; color: #666; font-size: 1.1rem; margin-bottom: 60px;">
+          Escucha las experiencias de quienes han vivido la formación San Pedro
+        </p>
+        <div class="testimonials-grid">
+          <div class="testimonial">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">BS</div>
+              <div class="testimonial-info">
+                <h4>Daarick Mendoza</h4>
+                <p>Promoción 2010 - Actor Profesional</p>
+              </div>
+            </div>
+            <div class="star-rating">
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+            </div>
+            <p class="testimonial-text">En mi vida profesional me he dado cuenta de lo importante de lo aprendido en el
+              Talent Show: disciplina y desarrollo del personaje en su contexto histórico. Lo que más me interesa es
+              hacer producciones que puedan llevar un mensaje de esperanza por todo el mundo.</p>
+          </div>
+          <div class="testimonial">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">CG</div>
+              <div class="testimonial-info">
+                <h4>Celso García</h4>
+                <p>Universidad Sideral Carrion, Santa Clara</p>
+              </div>
+            </div>
+            <div class="star-rating">
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+            </div>
+            <p class="testimonial-text">Una de las cosas que el colegio me dio para poder desarrollarme en mi carrera es
+              la habilidad de comunicarme y establecer amistades con personas de diferentes países, tanto en clase como
+              en la universidad.</p>
+          </div>
+          <div class="testimonial">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">👨‍👩‍👧‍👦</div>
+              <div class="testimonial-info">
+                <h4>Familia Quispe</h4>
+                <p>Padres de Familia</p>
+              </div>
+            </div>
+            <div class="star-rating">
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+            </div>
+            <p class="testimonial-text">Si bien en el otro colegio teníamos una buena formación académica, faltaba esa
+              calidez, ese hogar. Es bueno saber que cada persona del colegio no te ve como un número, sino más bien
+              como una familia importante.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-section fade-in" id="estadisticas">
+      <div class="container">
+        <h2 class="section-title">Excelencia en Números</h2>
+        <p style="text-align: center; color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 60px;">
+          Resultados que demuestran nuestro compromiso con la calidad educativa
+        </p>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">93%</div>
+            <div class="stat-label">Éxito en Diploma IB</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">60</div>
+            <div class="stat-label">Hectáreas de Campus</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Método Singapur</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Disciplinas Deportivas</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="campus-section fade-in">
+      <div class="container">
+        <div class="campus-content">
+          <div class="campus-text">
+            <h2>Un Campus Excepcional</h2>
+            <p>Nuestro extenso campus de 60 hectáreas es más que un lugar de aprendizaje. Es un espacio que inspira a
+              nuestros alumnos a explorar, descubrir y crecer, rodeados de naturaleza y con instalaciones de primera
+              clase.</p>
+            <div class="campus-features">
+              <div class="campus-feature">
+                <div class="feature-badge">📍 Campus</div>
+                <span>60 hectáreas de infraestructura moderna</span>
+              </div>
+              <div class="campus-feature">
+                <div class="feature-badge">👥 Comunidad</div>
+                <span>Santa Clara y mas lugares</span>
+              </div>
+              <div class="campus-feature">
+                <div class="feature-badge">♥ Familia</div>
+                <span>Participación activa de los padres</span>
+              </div>
+            </div>
+          </div>
+          <div class="campus-image">
+            <img
+              src="https://images.theconversation.com/files/270544/original/file-20190423-175514-1rng58t.jpg?ixlib=rb-4.1.0&rect=6%2C0%2C4236%2C2828&q=20&auto=format&w=320&fit=clip&dpr=2&usm=12&cs=strip"
+              alt="Campus del Colegio San Pedro">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features-section fade-in">
+      <div class="container">
+        <h2 class="section-title">Nuestra Propuesta Educativa</h2>
+        <div class="features-grid">
+          <div class="feature-item">
+            <div class="feature-icon">🎓</div>
+            <div class="feature-title">Acompañamiento Permanente</div>
+            <div class="feature-description">Plan Personal del Alumno (PPA) con atención individualizada</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🌍</div>
+            <div class="feature-title">Cursos en Inglés</div>
+            <div class="feature-description">Desde Early Years y tercer idioma desde 3er grado</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🤝</div>
+            <div class="feature-title">Experiencias Solidarias</div>
+            <div class="feature-description">Proyectos de servicio a lo largo de la vida escolar</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🔬</div>
+            <div class="feature-title">STEAM y Tecnología</div>
+            <div class="feature-description">MakerSpace para proyectos tecnológicos innovadores</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🎭</div>
+            <div class="feature-title">Programa de Arte</div>
+            <div class="feature-description">Cine, artes visuales, música y teatro</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">✈️</div>
+            <div class="feature-title">Viajes de Estudios</div>
+            <div class="feature-description">Experiencias nacionales e internacionales</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer" class="bg-primary text-white py-16">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8">
+        <!-- Logo Column -->
+        <div class="md:col-span-2">
+          <div class="flex items-center space-x-3 mb-6">
+            <div class="bg-accent text-white p-3 rounded-lg">
+              <i class="fas fa-graduation-cap text-2xl"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold">CEP MI MUNDO FELIZ</h3>
+              <p class="text-white/80">
+                Formando mentes, transformando vidas
+              </p>
+            </div>
+          </div>
+          <p class="text-white/80 mb-6 max-w-md">
+            Comprometidos con la excelencia educativa y el desarrollo integral
+            de nuestros estudiantes desde 2009.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="social-link">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
+          <ul class="space-y-2">
+            <li>
+              <a href="index.html#hero" class="footer-link">Inicio</a>
+            </li>
+            <li>
+              <a href="index.html#nosotros" class="footer-link">Nosotros</a>
+            </li>
+            <li>
+              <a href="blog.html" class="footer-link">Blog</a>
+            </li>
+            <li>
+              <a href="estudiar-aqui.html" class="footer-link">Porque estudiar aquí</a>
+            </li>
+            <li>
+              <a href="index.html#contacto" class="footer-link">Contacto</a>
+            </li>
+            <li>
+              <a href="index.html#matricula" class="footer-link">Matrícula</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Contacto</h4>
+          <ul class="space-y-2 text-white/80">
+            <li>
+              <i class="fas fa-map-marker-alt mr-2"></i>
+              Av. Principal 123, Lima
+            </li>
+            <li>
+              <i class="fas fa-phone mr-2"></i>
+              +51 987 654 321
+            </li>
+            <li>
+              <i class="fas fa-envelope mr-2"></i>
+              info@mimdofeliz.edu.pe
+            </li>
+            <li>
+              <i class="fas fa-clock mr-2"></i>
+              Lun - Vie: 7:30am - 4:00pm
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-white/20 mt-12 pt-8 text-center">
+        <p class="text-white/60">
+          &copy; 2024 CEP Mi Mundo Feliz. Todos los derechos reservados.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    window.addEventListener('scroll', () => {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 100) {
+        navbar.style.background = 'rgba(30, 58, 138, 0.98)';
+      } else {
+        navbar.style.background = 'rgba(30, 58, 138, 0.95)';
+      }
+    });
+
+    document.querySelector('.contact-form form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('¡Gracias por tu interés! Nos pondremos en contacto contigo pronto.');
+      this.reset();
+    });
+
+    function playVideo() {
+      const placeholder = document.querySelector('.video-placeholder');
+      const videoFrame = document.getElementById('videoFrame');
+      const iframe = videoFrame.querySelector('iframe');
+
+      placeholder.style.display = 'none';
+      videoFrame.style.display = 'block';
+
+      iframe.src = 'https://www.youtube.com/embed/-hSGS-YYenA?autoplay=1&rel=0';
+    }
+  </script>
+</body>
+
+</html>

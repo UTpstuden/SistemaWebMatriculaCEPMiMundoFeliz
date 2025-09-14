@@ -1,0 +1,2029 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CEP Mi Mundo Feliz - Educación de Excelencia | Lima, Perú</title>
+
+  <!-- Meta SEO -->
+  <meta name="description"
+    content="Centro Educativo Público Mi Mundo Feliz - Formando mentes, transformando vidas. Educación integral de calidad en Lima, Perú. Matrícula 2024 disponible." />
+  <meta name="keywords"
+    content="colegio Lima, educación Perú, matrícula 2024, CEP Mi Mundo Feliz, centro educativo, educación integral" />
+  <meta name="author" content="CEP Mi Mundo Feliz" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="CEP Mi Mundo Feliz - Formando mentes, transformando vidas" />
+  <meta property="og:description"
+    content="Educación de excelencia para el futuro de tus hijos. Matrícula 2024 disponible." />
+  <meta property="og:url" content="https://mimdofeliz.edu.pe" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#07132B",
+            secondary: "#4A90E2",
+            accent: "#FF6B35",
+            neutral: {
+              50: "#FFFFFF",
+              100: "#F5F5F5",
+              200: "#E5E5E5",
+              800: "#333333",
+            },
+          },
+          fontFamily: {
+            poppins: ["Poppins", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="font-poppins bg-white">
+  <!-- Header -->
+  <header id="header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/90 backdrop-blur-sm">
+    <nav class="container mx-auto px-4 py-4">
+      <div class="flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center space-x-3 cursor-pointer" onclick="navigateTo('home')">
+          <div class="bg-primary text-white p-2 rounded-lg">
+            <i class="fas fa-graduation-cap text-xl"></i>
+          </div>
+          <div>
+            <h1 class="text-lg font-bold text-primary">CEP MI MUNDO FELIZ</h1>
+            <p class="text-xs text-neutral-800">
+              Formando mentes, transformando vidas
+            </p>
+          </div>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center space-x-8">
+          <a href="#" onclick="navigateTo('home')" class="nav-link active" data-page="home">Inicio</a>
+          <a href="#" onclick="navigateTo('nosotros')" class="nav-link" data-page="nosotros">Nosotros</a>
+          <a href="blog.html" class="nav-link">Blog</a>
+          <a href="estudiar-aqui.html" class="nav-link">¿Porque estudiar aquí?</a>
+          <a href="#" onclick="navigateTo('contacto')" class="nav-link" data-page="contacto">Contacto</a>
+          <a href="#" onclick="navigateTo('matricula')" class="nav-link" data-page="matricula">Matrícula</a>
+          <button onclick="window.location.href='/pages/login.html'" class="btn-primary px-6 py-2">
+            <i class="fas fa-sign-in-alt mr-2"></i>Iniciar Sesión
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="lg:hidden text-primary" onclick="toggleMobileMenu()">
+          <i class="fas fa-bars text-xl" id="menu-icon"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="lg:hidden mt-4 pb-4 border-t border-neutral-200 hidden">
+        <div class="flex flex-col space-y-4 mt-4">
+          <a href="#" onclick="navigateTo('home')" class="nav-link-mobile" data-page="home">Inicio</a>
+          <a href="#" onclick="navigateTo('nosotros')" class="nav-link-mobile" data-page="nosotros">Nosotros</a>
+          <a href="blog.html" class="nav-link-mobile" target="_blank">Blog</a>
+          <a href="estudiar-aqui.html" class="nav-link-mobile" target="_blank">¿Porque estudiar aquí?</a>
+          <a href="#" onclick="navigateTo('contacto')" class="nav-link-mobile" data-page="contacto">Contacto</a>
+          <a href="#" onclick="navigateTo('matricula')" class="nav-link-mobile" data-page="matricula">Matrícula</a>
+          <button onclick="window.location.href='login.html'" class="btn-primary w-full py-3 mt-4">
+            <i class="fas fa-sign-in-alt mr-2"></i>Iniciar Sesión
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Landing Page Content -->
+    <div id="home-page" class="page-content">
+      <!-- Hero Section -->
+      <section class="hero-section relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/60 z-10"></div>
+        <div class="absolute inset-0 bg-cover bg-center" style="
+              background-image: url('https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg');
+            "></div>
+
+        <div class="relative z-20 container mx-auto px-4 text-center text-white">
+          <h1 class="text-4xl lg:text-6xl font-bold mb-6" data-aos="fade-up">
+            Bienvenidos al<br />
+            <span class="text-accent">CEP Mi Mundo Feliz</span>
+          </h1>
+          <p class="text-xl lg:text-2xl mb-4 font-semibold" data-aos="fade-up" data-aos-delay="200">
+            Formando mentes, transformando vidas
+          </p>
+          <p class="text-lg mb-8 max-w-2xl mx-auto opacity-90" data-aos="fade-up" data-aos-delay="400">
+            Educación integral de calidad, tecnológica y personalizada para el
+            futuro de tus hijos
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="600">
+            <button onclick="navigateTo('matricula')" class="btn-accent px-8 py-4 text-lg font-semibold">
+              <i class="fas fa-user-plus mr-2"></i>MATRICULA A TU HIJO AHORA
+            </button>
+            <button onclick="navigateTo('nosotros')" class="btn-secondary px-8 py-4 text-lg">
+              <i class="fas fa-info-circle mr-2"></i>Conoce más sobre nosotros
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Benefits Section -->
+      <section class="py-20 bg-neutral-50">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4">
+              ¿Por qué elegirnos?
+            </h2>
+            <p class="text-lg text-neutral-800 max-w-2xl mx-auto">
+              Nuestra propuesta educativa se basa en tres pilares
+              fundamentales
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon-container">
+                <i class="fas fa-book-open"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-primary mb-3">
+                Educación Integral
+              </h3>
+              <p class="text-neutral-800">
+                Formación académica completa que desarrolla todas las
+                capacidades de nuestros estudiantes
+              </p>
+            </div>
+
+            <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon-container">
+                <i class="fas fa-laptop"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-primary mb-3">
+                Tecnología Educativa
+              </h3>
+              <p class="text-neutral-800">
+                Herramientas digitales modernas que potencian el aprendizaje
+                del siglo XXI
+              </p>
+            </div>
+
+            <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon-container">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-primary mb-3">
+                Acompañamiento Personalizado
+              </h3>
+              <p class="text-neutral-800">
+                Seguimiento individual para garantizar el desarrollo óptimo de
+                cada estudiante
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Enrollment Process -->
+      <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4">
+              Matrícula en 3 simples pasos
+            </h2>
+            <p class="text-lg text-neutral-800">
+              Un proceso fácil y rápido para asegurar el futuro educativo de
+              tu hijo
+            </p>
+          </div>
+
+          <div class="max-w-4xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-center justify-between relative">
+              <!-- Timeline Line -->
+              <div
+                class="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-secondary/30 transform -translate-y-1/2">
+              </div>
+
+              <!-- Step 1 -->
+              <div class="timeline-step" data-aos="fade-up" data-aos-delay="100">
+                <div class="step-circle">
+                  <i class="fas fa-edit"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-primary mb-2">
+                  Completa el formulario
+                </h3>
+                <p class="text-neutral-800 text-center">
+                  Llena los datos básicos de tu hijo online
+                </p>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="timeline-step" data-aos="fade-up" data-aos-delay="200">
+                <div class="step-circle">
+                  <i class="fas fa-credit-card"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-primary mb-2">
+                  Realiza el pago
+                </h3>
+                <p class="text-neutral-800 text-center">
+                  Pago seguro online o en nuestras oficinas
+                </p>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="timeline-step" data-aos="fade-up" data-aos-delay="300">
+                <div class="step-circle">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-primary mb-2">
+                  Recibe confirmación
+                </h3>
+                <p class="text-neutral-800 text-center">
+                  Obtén acceso al sistema educativo
+                </p>
+              </div>
+            </div>
+
+            <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="400">
+              <button class="btn-accent px-8 py-4 text-lg font-semibold">
+                <i class="fas fa-rocket mr-2"></i>COMENZAR MATRÍCULA
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- System Features -->
+      <section class="py-20 bg-neutral-50">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4">
+              Sistema Educativo Digital
+            </h2>
+            <p class="text-lg text-neutral-800 max-w-2xl mx-auto">
+              Tecnología al servicio de la educación para una experiencia
+              moderna y eficiente
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+              <i class="fas fa-chart-line text-3xl text-accent mb-4"></i>
+              <h3 class="text-lg font-semibold text-primary mb-3">
+                Consulta de Notas
+              </h3>
+              <p class="text-neutral-800">
+                Acceso inmediato a calificaciones y progreso académico
+              </p>
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+              <i class="fas fa-calendar-check text-3xl text-accent mb-4"></i>
+              <h3 class="text-lg font-semibold text-primary mb-3">
+                Control de Asistencia
+              </h3>
+              <p class="text-neutral-800">
+                Monitoreo digital de asistencias y puntualidad
+              </p>
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+              <i class="fas fa-calendar-alt text-3xl text-accent mb-4"></i>
+              <h3 class="text-lg font-semibold text-primary mb-3">
+                Calendario Académico
+              </h3>
+              <p class="text-neutral-800">
+                Fechas importantes y eventos siempre actualizados
+              </p>
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+              <i class="fas fa-comments text-3xl text-accent mb-4"></i>
+              <h3 class="text-lg font-semibold text-primary mb-3">
+                Comunicación Directa
+              </h3>
+              <p class="text-neutral-800">
+                Canal directo con docentes y administración
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4">
+              Lo que dicen nuestras familias
+            </h2>
+            <p class="text-lg text-neutral-800">
+              Testimonios reales de padres satisfechos con nuestra propuesta
+              educativa
+            </p>
+          </div>
+
+          <div class="testimonials-container relative max-w-4xl mx-auto">
+            <div class="testimonial-slider">
+              <div class="testimonial-slide active" data-aos="fade-up">
+                <div class="testimonial-card">
+                  <div class="flex items-center mb-6">
+                    <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg" alt="María González"
+                      class="testimonial-avatar" />
+                    <div class="ml-4">
+                      <h4 class="font-semibold text-primary">
+                        María González
+                      </h4>
+                      <p class="text-neutral-800">Madre de familia</p>
+                    </div>
+                  </div>
+                  <p class="text-neutral-800 italic">
+                    "El CEP Mi Mundo Feliz ha transformado la educación de mi
+                    hija. La atención personalizada y el sistema digital me
+                    permiten estar siempre informada sobre su progreso."
+                  </p>
+                  <div class="flex text-accent mt-4">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="testimonial-slide">
+                <div class="testimonial-card">
+                  <div class="flex items-center mb-6">
+                    <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg" alt="Carlos Mendoza"
+                      class="testimonial-avatar" />
+                    <div class="ml-4">
+                      <h4 class="font-semibold text-primary">
+                        Carlos Mendoza
+                      </h4>
+                      <p class="text-neutral-800">Padre de familia</p>
+                    </div>
+                  </div>
+                  <p class="text-neutral-800 italic">
+                    "La calidad educativa es excepcional. Mi hijo ha
+                    desarrollado habilidades que no esperaba a su edad.
+                    Recomiendo totalmente esta institución."
+                  </p>
+                  <div class="flex text-accent mt-4">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="testimonial-slide">
+                <div class="testimonial-card">
+                  <div class="flex items-center mb-6">
+                    <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg" alt="Ana Rodríguez"
+                      class="testimonial-avatar" />
+                    <div class="ml-4">
+                      <h4 class="font-semibold text-primary">
+                        Ana Rodríguez
+                      </h4>
+                      <p class="text-neutral-800">Madre de familia</p>
+                    </div>
+                  </div>
+                  <p class="text-neutral-800 italic">
+                    "El sistema digital es fantástico. Puedo ver las notas de
+                    mis gemelos en tiempo real y comunicarme fácilmente con
+                    sus profesores."
+                  </p>
+                  <div class="flex text-accent mt-4">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial Navigation -->
+            <div class="flex justify-center mt-8 space-x-2">
+              <button class="testimonial-indicator active" onclick="showTestimonial(0)"></button>
+              <button class="testimonial-indicator" onclick="showTestimonial(1)"></button>
+              <button class="testimonial-indicator" onclick="showTestimonial(2)"></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA -->
+      <section class="py-20 bg-gradient-to-r from-primary to-secondary">
+        <div class="container mx-auto px-4 text-center" data-aos="fade-up">
+          <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">
+            ¿Listo para formar parte de nuestra familia educativa?
+          </h2>
+          <p class="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+            No esperes más. Dale a tu hijo la oportunidad de recibir una
+            educación de excelencia.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button class="btn-accent px-8 py-4 text-lg font-semibold">
+              <i class="fas fa-user-plus mr-2"></i>MATRICULAR AHORA
+            </button>
+            <button onclick="window.location.href='login.html'" class="btn-outline-white px-8 py-4 text-lg">
+              <i class="fas fa-sign-in-alt mr-2"></i>¿Ya tienes cuenta? Inicia
+              sesión
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Nosotros Page Content -->
+    <div id="nosotros-page" class="page-content hidden">
+      <!-- Hero Section -->
+      <section class="hero-section-secondary relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/70 to-secondary/70 z-10"></div>
+        <div class="absolute inset-0 bg-cover bg-center" style="
+              background-image: url('https://images.pexels.com/photos/8471783/pexels-photo-8471783.jpeg');
+            "></div>
+
+        <div class="relative z-20 container mx-auto px-4 text-center text-white">
+          <nav class="breadcrumb mb-4" data-aos="fade-up">
+            <span onclick="navigateTo('home')" class="cursor-pointer hover:text-accent">Inicio</span>
+            <i class="fas fa-chevron-right mx-2"></i>
+            <span>Nosotros</span>
+          </nav>
+          <h1 class="text-4xl lg:text-5xl font-bold mb-4" data-aos="fade-up" data-aos-delay="200">
+            Conoce Nuestra Historia
+          </h1>
+          <p class="text-xl mb-6" data-aos="fade-up" data-aos-delay="400">
+            15 años transformando vidas en nuestra comunidad
+          </p>
+        </div>
+      </section>
+
+      <!-- Timeline Section -->
+      <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4">
+              Nuestra Trayectoria
+            </h2>
+            <p class="text-lg text-neutral-800">
+              Cada año marca un hito importante en nuestro crecimiento
+            </p>
+          </div>
+
+          <div class="timeline">
+            <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
+              <div class="timeline-year">2009</div>
+              <div class="timeline-content">
+                <h3 class="font-semibold text-primary mb-2">
+                  Fundación del CEP Mi Mundo Feliz
+                </h3>
+                <p class="text-neutral-800">
+                  Inicio de nuestro sueño educativo con 50 estudiantes
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
+              <div class="timeline-year">2012</div>
+              <div class="timeline-content">
+                <h3 class="font-semibold text-primary mb-2">
+                  Primera promoción de graduados
+                </h3>
+                <p class="text-neutral-800">
+                  25 estudiantes completaron exitosamente su educación
+                  primaria
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
+              <div class="timeline-year">2015</div>
+              <div class="timeline-content">
+                <h3 class="font-semibold text-primary mb-2">
+                  Implementación de tecnología educativa
+                </h3>
+                <p class="text-neutral-800">
+                  Laboratorio de cómputo y herramientas digitales
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-left" data-aos-delay="400">
+              <div class="timeline-year">2018</div>
+              <div class="timeline-content">
+                <h3 class="font-semibold text-primary mb-2">
+                  Reconocimiento regional de excelencia
+                </h3>
+                <p class="text-neutral-800">
+                  Premiados como mejor institución educativa del distrito
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-right" data-aos-delay="500">
+              <div class="timeline-year">2020</div>
+              <div class="timeline-content">
+                <h3 class="font-semibold text-primary mb-2">
+                  Adaptación a educación virtual
+                </h3>
+                <p class="text-neutral-800">
+                  Transición exitosa al modelo híbrido durante la pandemia
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-left" data-aos-delay="600">
+              <div class="timeline-year">2024</div>
+              <div class="timeline-content">
+                <h3 class="font-semibold text-primary mb-2">
+                  Sistema de gestión educativa integral
+                </h3>
+                <p class="text-neutral-800">
+                  Plataforma digital completa para toda la comunidad educativa
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mission, Vision, Values -->
+      <section class="py-20 bg-neutral-50">
+        <div class="container mx-auto px-4">
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="mvv-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="mvv-icon">
+                <i class="fas fa-target"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-primary mb-4">Misión</h3>
+              <p class="text-neutral-800">
+                Brindar educación integral de calidad, desarrollando
+                competencias académicas, sociales y emocionales en nuestros
+                estudiantes, preparándolos para los desafíos del futuro.
+              </p>
+            </div>
+
+            <div class="mvv-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="mvv-icon">
+                <i class="fas fa-eye"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-primary mb-4">Visión</h3>
+              <p class="text-neutral-800">
+                Ser reconocidos como la institución educativa líder en
+                formación integral y excelencia académica, transformando vidas
+                en nuestra comunidad.
+              </p>
+            </div>
+
+            <div class="mvv-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="mvv-icon">
+                <i class="fas fa-heart"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-primary mb-4">Valores</h3>
+              <ul class="text-neutral-800 space-y-2">
+                <li>
+                  <i class="fas fa-check text-accent mr-2"></i>Excelencia
+                  académica
+                </li>
+                <li>
+                  <i class="fas fa-check text-accent mr-2"></i>Integridad
+                </li>
+                <li>
+                  <i class="fas fa-check text-accent mr-2"></i>Innovación
+                </li>
+                <li>
+                  <i class="fas fa-check text-accent mr-2"></i>Responsabilidad
+                </li>
+                <li>
+                  <i class="fas fa-check text-accent mr-2"></i>Colaboración
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Section -->
+      <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4">
+              Conoce a nuestros educadores
+            </h2>
+            <p class="text-lg text-neutral-800">
+              Un equipo comprometido con la excelencia educativa
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+              <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg" alt="Director General"
+                class="team-avatar" />
+              <h3 class="text-lg font-semibold text-primary mb-1">
+                Dr. Roberto Silva
+              </h3>
+              <p class="text-secondary font-medium mb-3">Director General</p>
+              <p class="text-neutral-800 text-sm">
+                20 años de experiencia en gestión educativa y liderazgo
+                académico.
+              </p>
+            </div>
+
+            <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+              <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg" alt="Coordinadora Académica"
+                class="team-avatar" />
+              <h3 class="text-lg font-semibold text-primary mb-1">
+                Lic. Carmen Vega
+              </h3>
+              <p class="text-secondary font-medium mb-3">
+                Coordinadora Académica
+              </p>
+              <p class="text-neutral-800 text-sm">
+                Especialista en pedagogía moderna y desarrollo curricular.
+              </p>
+            </div>
+
+            <div class="team-card" data-aos="fade-up" data-aos-delay="300">
+              <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
+                alt="Coordinador de Tecnología" class="team-avatar" />
+              <h3 class="text-lg font-semibold text-primary mb-1">
+                Ing. Luis Torres
+              </h3>
+              <p class="text-secondary font-medium mb-3">
+                Coordinador de Tecnología
+              </p>
+              <p class="text-neutral-800 text-sm">
+                Experto en tecnología educativa e innovación digital.
+              </p>
+            </div>
+
+            <div class="team-card" data-aos="fade-up" data-aos-delay="400">
+              <img src="https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg" alt="Psicóloga Educativa"
+                class="team-avatar" />
+              <h3 class="text-lg font-semibold text-primary mb-1">
+                Ps. Isabel Morales
+              </h3>
+              <p class="text-secondary font-medium mb-3">
+                Psicóloga Educativa
+              </p>
+              <p class="text-neutral-800 text-sm">
+                Especialista en desarrollo emocional y acompañamiento
+                estudiantil.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Infrastructure Gallery -->
+      <section class="py-20 bg-neutral-50">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4">
+              Nuestras Instalaciones
+            </h2>
+            <p class="text-lg text-neutral-800">
+              Espacios diseñados para el aprendizaje y desarrollo integral
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+              <img src="https://images.pexels.com/photos/8471823/pexels-photo-8471823.jpeg" alt="Aulas modernas"
+                class="gallery-image" />
+              <div class="gallery-overlay">
+                <h3 class="text-white font-semibold mb-2">Aulas Modernas</h3>
+                <p class="text-white/90">Espacios amplios y bien equipados</p>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+              <img src="https://images.pexels.com/photos/159844/computer-desk-workspace-keyboard-159844.jpeg"
+                alt="Laboratorio de cómputo" class="gallery-image" />
+              <div class="gallery-overlay">
+                <h3 class="text-white font-semibold mb-2">
+                  Laboratorio de Cómputo
+                </h3>
+                <p class="text-white/90">Tecnología de última generación</p>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+              <img src="https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg"
+                alt="Biblioteca" class="gallery-image" />
+              <div class="gallery-overlay">
+                <h3 class="text-white font-semibold mb-2">Biblioteca</h3>
+                <p class="text-white/90">Amplio acervo bibliográfico</p>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
+              <img src="https://images.pexels.com/photos/209964/pexels-photo-209964.jpeg" alt="Áreas deportivas"
+                class="gallery-image" />
+              <div class="gallery-overlay">
+                <h3 class="text-white font-semibold mb-2">
+                  Áreas Deportivas
+                </h3>
+                <p class="text-white/90">Espacios para actividad física</p>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="500">
+              <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg" alt="Comedor escolar"
+                class="gallery-image" />
+              <div class="gallery-overlay">
+                <h3 class="text-white font-semibold mb-2">Comedor Escolar</h3>
+                <p class="text-white/90">Alimentación saludable</p>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="600">
+              <img src="https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg" alt="Área de juegos"
+                class="gallery-image" />
+              <div class="gallery-overlay">
+                <h3 class="text-white font-semibold mb-2">Área de Juegos</h3>
+                <p class="text-white/90">Recreación y esparcimiento</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="py-20 bg-gradient-to-r from-secondary to-primary">
+        <div class="container mx-auto px-4 text-center" data-aos="fade-up">
+          <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">
+            ¿Te convencimos? ¡Es hora de actuar!
+          </h2>
+          <p class="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+            Dale a tu hijo la oportunidad de formar parte de nuestra familia
+            educativa
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button class="btn-accent px-8 py-4 text-lg font-semibold">
+              <i class="fas fa-user-plus mr-2"></i>MATRICULA AHORA
+            </button>
+            <button onclick="navigateTo('contacto')" class="btn-outline-white px-8 py-4 text-lg">
+              <i class="fas fa-envelope mr-2"></i>CONTÁCTANOS
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Contacto Page Content -->
+    <div id="contacto-page" class="page-content hidden">
+      <!-- Hero Section -->
+      <section class="hero-section-secondary relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/70 to-secondary/70 z-10"></div>
+        <div class="absolute inset-0 bg-cover bg-center" style="
+              background-image: url('https://images.pexels.com/photos/8471908/pexels-photo-8471908.jpeg');
+            "></div>
+
+        <div class="relative z-20 container mx-auto px-4 text-center text-white">
+          <nav class="breadcrumb mb-4" data-aos="fade-up">
+            <span onclick="navigateTo('home')" class="cursor-pointer hover:text-accent">Inicio</span>
+            <i class="fas fa-chevron-right mx-2"></i>
+            <span>Contacto</span>
+          </nav>
+          <h1 class="text-4xl lg:text-5xl font-bold mb-4" data-aos="fade-up" data-aos-delay="200">
+            Estamos Aquí Para Ayudarte
+          </h1>
+          <p class="text-xl mb-6" data-aos="fade-up" data-aos-delay="400">
+            Múltiples formas de comunicarte con nosotros
+          </p>
+        </div>
+      </section>
+
+      <!-- Contact Info -->
+      <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="grid md:grid-cols-3 gap-8 mb-16">
+            <div class="contact-info-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-primary mb-3">
+                Ubicación
+              </h3>
+              <p class="text-neutral-800 mb-2">Av. Principal 123</p>
+              <p class="text-neutral-800 mb-4">
+                San Juan de Lurigancho, Lima - Perú
+              </p>
+              <a href="https://maps.google.com" target="_blank"
+                class="text-secondary hover:text-accent transition-colors">
+                <i class="fas fa-external-link-alt mr-1"></i>Ver en Google
+                Maps
+              </a>
+            </div>
+
+            <div class="contact-info-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-primary mb-3">
+                Teléfonos
+              </h3>
+              <p class="text-neutral-800 mb-2">
+                <i class="fas fa-phone mr-2 text-secondary"></i>+51 987 654
+                321
+              </p>
+              <p class="text-neutral-800 mb-4">
+                <i class="fab fa-whatsapp mr-2 text-green-500"></i>+51 987 654
+                321
+              </p>
+              <p class="text-sm text-neutral-600">
+                Lunes a Viernes: 7:30am - 4:00pm
+              </p>
+            </div>
+
+            <div class="contact-info-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-primary mb-3">Email</h3>
+              <p class="text-neutral-800 mb-2">info@mimdofeliz.edu.pe</p>
+              <p class="text-neutral-800 mb-4">
+                admisiones@mimdofeliz.edu.pe
+              </p>
+              <p class="text-sm text-neutral-600">Respuesta en 24 horas</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Form -->
+      <section class="py-20 bg-neutral-50">
+        <div class="container mx-auto px-4">
+          <div class="max-w-4xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12">
+              <!-- Form -->
+              <div data-aos="fade-right">
+                <h2 class="text-3xl font-bold text-primary mb-6">
+                  Envíanos un Mensaje
+                </h2>
+                <form id="contact-form" class="space-y-6">
+                  <div>
+                    <label for="name" class="form-label">Nombre completo *</label>
+                    <input type="text" id="name" name="name" class="form-input" required />
+                    <div class="error-message hidden"></div>
+                  </div>
+
+                  <div>
+                    <label for="email" class="form-label">Email *</label>
+                    <input type="email" id="email" name="email" class="form-input" required />
+                    <div class="error-message hidden"></div>
+                  </div>
+
+                  <div>
+                    <label for="phone" class="form-label">Teléfono *</label>
+                    <input type="tel" id="phone" name="phone" class="form-input" required />
+                    <div class="error-message hidden"></div>
+                  </div>
+
+                  <div>
+                    <label for="inquiry-type" class="form-label">Tipo de consulta</label>
+                    <select id="inquiry-type" name="inquiry-type" class="form-input">
+                      <option value="">Selecciona una opción</option>
+                      <option value="matricula">
+                        Información sobre matrícula
+                      </option>
+                      <option value="academica">Consulta académica</option>
+                      <option value="tecnico">Problema técnico</option>
+                      <option value="otro">Otro</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label for="message" class="form-label">Mensaje *</label>
+                    <textarea id="message" name="message" rows="5" class="form-input" required></textarea>
+                    <div class="error-message hidden"></div>
+                  </div>
+
+                  <button type="submit" class="btn-accent w-full py-3 text-lg font-semibold">
+                    <i class="fas fa-paper-plane mr-2"></i>ENVIAR MENSAJE
+                  </button>
+                </form>
+              </div>
+
+              <!-- Map -->
+              <div data-aos="fade-left">
+                <h3 class="text-2xl font-bold text-primary mb-6">
+                  Nuestra Ubicación
+                </h3>
+                <div class="map-container">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.962!2d-77.0282!3d-12.0464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDAyJzQ3LjAiUyA3N8KwMDEnNDEuNSJX!5e0!3m2!1sen!2spe!4v1635789012345!5m2!1sen!2spe"
+                    class="w-full h-96 rounded-lg shadow-lg border-0" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                  </iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4">
+              Preguntas Frecuentes
+            </h2>
+            <p class="text-lg text-neutral-800">
+              Respuestas a las consultas más comunes de padres de familia
+            </p>
+          </div>
+
+          <div class="max-w-4xl mx-auto">
+            <div class="faq-container space-y-4">
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                  <span>¿Cuáles son los requisitos de matrícula?</span>
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    Los requisitos incluyen: DNI del estudiante y padres,
+                    partida de nacimiento, certificado de estudios previos, 2
+                    fotos tamaño carnet y certificado médico.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                  <span>¿Cuándo abren las inscripciones?</span>
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    Las inscripciones para el año 2024 están abiertas desde
+                    enero hasta diciembre, con cupos limitados por grado.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                  <span>¿Tienen vacantes disponibles?</span>
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    Sí, actualmente tenemos vacantes en todos los grados. Te
+                    recomendamos contactarnos pronto para asegurar el cupo de
+                    tu hijo.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                  <span>¿Cómo funciona el sistema de pagos?</span>
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    Aceptamos pagos en efectivo, transferencias bancarias y
+                    tarjetas. Ofrecemos facilidades de pago mensuales.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                  <span>¿Ofrecen transporte escolar?</span>
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    Sí, contamos con servicio de movilidad escolar para
+                    diferentes rutas de la ciudad con conductores calificados.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                  <span>¿Cómo accedo al sistema educativo?</span>
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    Una vez matriculado, recibirás credenciales de acceso para
+                    el portal educativo donde podrás consultar notas,
+                    asistencias y comunicarte con docentes.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Matricula Page Content -->
+    <div id="matricula-page" class="page-content hidden">
+      <!-- Hero Section -->
+      <section class="hero-section-secondary relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/70 to-secondary/70 z-10"></div>
+        <div class="absolute inset-0 bg-cover bg-center" style="
+              background-image: url('https://images.pexels.com/photos/8471783/pexels-photo-8471783.jpeg');
+            "></div>
+
+        <div class="relative z-20 container mx-auto px-4 text-center text-white">
+          <nav class="breadcrumb mb-4" data-aos="fade-up">
+            <span onclick="navigateTo('home')" class="cursor-pointer hover:text-accent">Inicio</span>
+            <i class="fas fa-chevron-right mx-2"></i>
+            <span>Matrícula</span>
+          </nav>
+          <h1 class="text-4xl lg:text-5xl font-bold mb-4" data-aos="fade-up" data-aos-delay="200">
+            Matrícula 2024
+          </h1>
+          <p class="text-xl mb-6" data-aos="fade-up" data-aos-delay="400">
+            Únete a nuestra familia educativa
+          </p>
+        </div>
+      </section>
+
+      <!-- Why Study Here Section -->
+      <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4">
+              ¿Por qué estudiar en CEP Mi Mundo Feliz?
+            </h2>
+            <p class="text-lg text-neutral-800 max-w-2xl mx-auto">
+              Descubre las razones que hacen de nuestro colegio la mejor opción para tu hijo
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon-container">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-primary mb-3">
+                Excelencia Académica
+              </h3>
+              <p class="text-neutral-800">
+                Nuestros estudiantes obtienen los mejores resultados en evaluaciones nacionales
+              </p>
+            </div>
+
+            <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon-container">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-primary mb-3">
+                Atención Personalizada
+              </h3>
+              <p class="text-neutral-800">
+                Grupos reducidos permiten un seguimiento individual de cada estudiante
+              </p>
+            </div>
+
+            <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon-container">
+                <i class="fas fa-laptop"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-primary mb-3">
+                Tecnología Moderna
+              </h3>
+              <p class="text-neutral-800">
+                Laboratorios equipados y plataformas digitales para el aprendizaje del siglo XXI
+              </p>
+            </div>
+
+            <div class="benefit-card" data-aos="fade-up" data-aos-delay="400">
+              <div class="icon-container">
+                <i class="fas fa-heart"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-primary mb-3">
+                Valores y Ética
+              </h3>
+              <p class="text-neutral-800">
+                Formamos no solo académicamente, sino también en valores humanos
+              </p>
+            </div>
+
+            <div class="benefit-card" data-aos="fade-up" data-aos-delay="500">
+              <div class="icon-container">
+                <i class="fas fa-futbol"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-primary mb-3">
+                Actividades Extracurriculares
+              </h3>
+              <p class="text-neutral-800">
+                Deportes, arte y cultura para el desarrollo integral
+              </p>
+            </div>
+
+            <div class="benefit-card" data-aos="fade-up" data-aos-delay="600">
+              <div class="icon-container">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-primary mb-3">
+                Seguridad y Confianza
+              </h3>
+              <p class="text-neutral-800">
+                Entorno seguro con personal capacitado y protocolos de seguridad
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Enrollment Form -->
+      <section class="py-20 bg-neutral-50">
+        <div class="container mx-auto px-4">
+          <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+              <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4">
+                Formulario de Matrícula
+              </h2>
+              <p class="text-lg text-neutral-800">
+                Completa los datos para iniciar el proceso de matrícula
+              </p>
+            </div>
+
+            <form id="matricula-form" class="bg-white p-8 rounded-lg shadow-lg" data-aos="fade-up">
+              <!-- Student Information -->
+              <div class="mb-8">
+                <h3 class="text-xl font-semibold text-primary mb-4">
+                  Información del Estudiante
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label for="student-name" class="form-label">Nombre completo *</label>
+                    <input type="text" id="student-name" name="student-name" class="form-input" required />
+                  </div>
+
+                  <div>
+                    <label for="student-dni" class="form-label">DNI *</label>
+                    <input type="text" id="student-dni" name="student-dni" class="form-input" required />
+                  </div>
+
+                  <div>
+                    <label for="student-birthdate" class="form-label">Fecha de nacimiento *</label>
+                    <input type="date" id="student-birthdate" name="student-birthdate" class="form-input" required />
+                  </div>
+
+                  <div>
+                    <label for="student-grade" class="form-label">Grado a matricular *</label>
+                    <select id="student-grade" name="student-grade" class="form-input" required>
+                      <option value="">Selecciona un grado</option>
+                      <option value="1">1° Grado</option>
+                      <option value="2">2° Grado</option>
+                      <option value="3">3° Grado</option>
+                      <option value="4">4° Grado</option>
+                      <option value="5">5° Grado</option>
+                      <option value="6">6° Grado</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Parent Information -->
+              <div class="mb-8">
+                <h3 class="text-xl font-semibold text-primary mb-4">
+                  Información de los Padres
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label for="parent-name" class="form-label">Nombre del padre/madre *</label>
+                    <input type="text" id="parent-name" name="parent-name" class="form-input" required />
+                  </div>
+
+                  <div>
+                    <label for="parent-dni" class="form-label">DNI del padre/madre *</label>
+                    <input type="text" id="parent-dni" name="parent-dni" class="form-input" required />
+                  </div>
+
+                  <div>
+                    <label for="parent-phone" class="form-label">Teléfono *</label>
+                    <input type="tel" id="parent-phone" name="parent-phone" class="form-input" required />
+                  </div>
+
+                  <div>
+                    <label for="parent-email" class="form-label">Email *</label>
+                    <input type="email" id="parent-email" name="parent-email" class="form-input" required />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Additional Information -->
+              <div class="mb-8">
+                <h3 class="text-xl font-semibold text-primary mb-4">
+                  Información Adicional
+                </h3>
+                <div>
+                  <label for="comments" class="form-label">Comentarios o requerimientos especiales</label>
+                  <textarea id="comments" name="comments" rows="4" class="form-input"></textarea>
+                </div>
+              </div>
+
+              <button type="submit" class="btn-accent w-full py-3 text-lg font-semibold">
+                <i class="fas fa-paper-plane mr-2"></i>Enviar Solicitud de Matrícula
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Requirements Section -->
+      <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4">
+              Requisitos de Matrícula
+            </h2>
+            <p class="text-lg text-neutral-800">
+              Documentos necesarios para completar la matrícula
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div data-aos="fade-up" data-aos-delay="100">
+              <h3 class="text-xl font-semibold text-primary mb-4">
+                Documentos del Estudiante
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <i class="fas fa-check text-accent mr-3 mt-1"></i>
+                  <span>Copia de DNI del estudiante</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-accent mr-3 mt-1"></i>
+                  <span>Partida de nacimiento original</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-accent mr-3 mt-1"></i>
+                  <span>Certificado de estudios del año anterior</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-accent mr-3 mt-1"></i>
+                  <span>2 fotos tamaño carnet</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-accent mr-3 mt-1"></i>
+                  <span>Certificado médico</span>
+                </li>
+              </ul>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="200">
+              <h3 class="text-xl font-semibold text-primary mb-4">
+                Documentos de los Padres
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <i class="fas fa-check text-accent mr-3 mt-1"></i>
+                  <span>Copia de DNI de ambos padres</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-accent mr-3 mt-1"></i>
+                  <span>Recibo de luz, agua o teléfono (domicilio)</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-accent mr-3 mt-1"></i>
+                  <span>Declaración jurada de ingresos</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-accent mr-3 mt-1"></i>
+                  <span>Ficha de matrícula firmada</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Payment Information -->
+      <section class="py-20 bg-neutral-50">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4">
+              Información de Pagos
+            </h2>
+            <p class="text-lg text-neutral-800">
+              Conoce nuestras opciones de pago y cuotas
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center" data-aos="fade-up" data-aos-delay="100">
+              <i class="fas fa-money-bill-wave text-4xl text-accent mb-4"></i>
+              <h3 class="text-xl font-semibold text-primary mb-3">Matrícula</h3>
+              <p class="text-2xl font-bold text-secondary mb-2">S/ 150.00</p>
+              <p class="text-neutral-800">Pago único al inicio del año</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center" data-aos="fade-up" data-aos-delay="200">
+              <i class="fas fa-calendar-alt text-4xl text-accent mb-4"></i>
+              <h3 class="text-xl font-semibold text-primary mb-3">
+                Mensualidad
+              </h3>
+              <p class="text-2xl font-bold text-secondary mb-2">S/ 120.00</p>
+              <p class="text-neutral-800">10 cuotas mensuales</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center" data-aos="fade-up" data-aos-delay="300">
+              <i class="fas fa-credit-card text-4xl text-accent mb-4"></i>
+              <h3 class="text-xl font-semibold text-primary mb-3">
+                Métodos de Pago
+              </h3>
+              <p class="text-neutral-800 mb-2">Efectivo</p>
+              <p class="text-neutral-800 mb-2">Transferencia bancaria</p>
+              <p class="text-neutral-800">Tarjetas de crédito/débito</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="py-20 bg-gradient-to-r from-secondary to-primary">
+        <div class="container mx-auto px-4 text-center" data-aos="fade-up">
+          <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">
+            ¿Listo para comenzar?
+          </h2>
+          <p class="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+            No pierdas la oportunidad de formar parte de nuestra comunidad educativa
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button onclick="navigateTo('contacto')" class="btn-accent px-8 py-4 text-lg font-semibold">
+              <i class="fas fa-envelope mr-2"></i>Contactar para más información
+            </button>
+            <button class="btn-outline-white px-8 py-4 text-lg">
+              <i class="fas fa-phone mr-2"></i>Llamar ahora
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Estudiar Aquí Page Content -->
+    <div id="estudiar-aqui-page" class="page-content hidden">
+      <!-- Hero Section -->
+      <section class="hero-section-secondary relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/70 to-secondary/70 z-10"></div>
+        <div class="absolute inset-0 bg-cover bg-center"
+          style="background-image: url('https://media.istockphoto.com/id/1460754251/es/foto/escolares-haciendo-ejercicio-durante-las-vacaciones-recreativas.jpg?s=612x612&w=0&k=20&c=hzwKkqFnp8R4qRTOLPd7jgZhVTttHrvnkGys0kyJWs8=');">
+        </div>
+        <div class="relative z-20 container mx-auto px-4 text-center text-white">
+          <nav class="breadcrumb mb-4" data-aos="fade-up">
+            <span onclick="navigateTo('home')" class="cursor-pointer hover:text-accent">Inicio</span>
+            <i class="fas fa-chevron-right mx-2"></i>
+            <span>Estudiar Aquí</span>
+          </nav>
+          <h1 class="text-4xl lg:text-5xl font-bold mb-4" data-aos="fade-up" data-aos-delay="200">
+            Formación Integral y<br>Excelencia Académica
+          </h1>
+          <p class="text-xl mb-6" data-aos="fade-up" data-aos-delay="400">
+            Elegir el mejor colegio para sus hijos es una de las decisiones más importantes que debe tomar una familia.
+          </p>
+        </div>
+      </section>
+
+      <!-- Formación Integral Section -->
+      <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+              <img src="https://mytgf.neocities.org/Por%20que%20estudiar%20aqui/img/formacion%20integral.jpg"
+                alt="Alumno en clase" class="rounded-lg shadow-lg" />
+            </div>
+            <div data-aos="fade-left">
+              <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-6">Formación Integral</h2>
+              <p class="text-lg text-neutral-800">
+                En <strong>CEP Mi Mundo Feliz</strong>, nos enfocamos en una educación que se basa en el
+                perfeccionamiento de las diferentes dimensiones de la persona,
+                <strong>asegurando un desarrollo equilibrado y completo.</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Nuestra Propuesta Educativa -->
+      <section class="py-20 bg-neutral-50">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4">Nuestra Propuesta Educativa</h2>
+            <p class="text-lg text-neutral-800">Descubre lo que hace única nuestra metodología</p>
+          </div>
+
+          <div class="space-y-20">
+            <!-- Early Years -->
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+              <div data-aos="fade-right">
+                <div class="video-container">
+                  <iframe src="https://www.youtube.com/embed/f-2ejfy4Zy4" title="Video YouTube" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen class="w-full h-64 rounded-lg shadow-lg"></iframe>
+                </div>
+              </div>
+              <div data-aos="fade-left">
+                <h3 class="text-2xl font-bold text-primary mb-4">Despertando potenciales desde Early Years</h3>
+                <p class="text-lg text-neutral-800 mb-6">
+                  Fomentamos el crecimiento desde los primeros años en un ambiente seguro y estimulante. Por eso
+                  ofrecemos un enfoque que se centra en:
+                </p>
+                <ul class="space-y-3 text-neutral-800">
+                  <li><i class="fas fa-check text-accent mr-2"></i>La inmersión temprana en el idioma inglés de forma
+                    sólida y lúdica.</li>
+                  <li><i class="fas fa-check text-accent mr-2"></i>La colaboración estrecha con los padres y el
+                    acompañamiento personalizado.</li>
+                  <li><i class="fas fa-check text-accent mr-2"></i>Una amplia gama de talleres extracurriculares desde
+                    el Nido (Nursery).</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Educación de Calidad -->
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+              <div data-aos="fade-right">
+                <h3 class="text-2xl font-bold text-primary mb-4">Educación de calidad para futuros líderes</h3>
+                <p class="text-lg text-neutral-800 mb-6">
+                  Nuestra propuesta va más allá de los estándares tradicionales...
+                </p>
+                <ul class="space-y-3 text-neutral-800">
+                  <li><i class="fas fa-check text-accent mr-2"></i>Programa académico con sentido ético y apertura a la
+                    trascendencia.</li>
+                  <li><i class="fas fa-check text-accent mr-2"></i>El IB en nuestro colegio estimula madurez y
+                    aprendizaje autónomo.</li>
+                  <li><i class="fas fa-check text-accent mr-2"></i>Alentamos la autonomía y fomentamos el pensamiento
+                    crítico.</li>
+                </ul>
+              </div>
+              <div data-aos="fade-left">
+                <img src="https://sanpedro.vc-sp.edu.pe/wp-content/uploads/2023/06/VCSP-Logo-IB.png" alt="IB Logo"
+                  class="rounded-lg shadow-lg" />
+              </div>
+            </div>
+
+            <!-- Era Digital -->
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+              <div data-aos="fade-right">
+                <div class="video-container">
+                  <iframe src="https://www.youtube.com/embed/f-2ejfy4Zy4" title="Video YouTube" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen class="w-full h-64 rounded-lg shadow-lg"></iframe>
+                </div>
+              </div>
+              <div data-aos="fade-left">
+                <h3 class="text-2xl font-bold text-primary mb-4">En sintonía con la era digital</h3>
+                <p class="text-lg text-neutral-800 mb-6">
+                  En nuestro colegio, la tecnología es un medio para resolver problemas y transformar realidades,
+                  adiestrando a nuestros alumnos para un mundo inmerso en ella:
+                </p>
+                <ul class="space-y-3 text-neutral-800">
+                  <li><i class="fas fa-check text-accent mr-2"></i>Tecnología aplicada a proyectos con propósitos
+                    específicos, transformando y mejorando realidades.</li>
+                  <li><i class="fas fa-check text-accent mr-2"></i>Desarrollo de habilidades como la paciencia, la
+                    resiliencia y la solidaridad a través de la resolución de problemas.</li>
+                  <li><i class="fas fa-check text-accent mr-2"></i>Fomento de la creatividad y el pensamiento crítico en
+                    la búsqueda de soluciones a problemas concretos.</li>
+                  <li><i class="fas fa-check text-accent mr-2"></i>Espacio de trabajo colaborativo equipado con
+                    tecnología de vanguardia, promoviendo la innovación.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Video Section -->
+      <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 text-center">
+          <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4" data-aos="fade-up">Conoce Nuestra Comunidad</h2>
+          <p class="text-lg text-neutral-800 mb-12" data-aos="fade-up" data-aos-delay="200">
+            Descubre la experiencia educativa que transforma vidas
+          </p>
+          <div class="max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="400">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/-hSGS-YYenA" title="Video Institucional" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen class="w-full h-96 rounded-lg shadow-lg"></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Valores Section -->
+      <section class="py-20 bg-neutral-50">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4">Nuestros Pilares Fundamentales</h2>
+            <p class="text-lg text-neutral-800 max-w-2xl mx-auto">
+              Cuatro pilares que guían nuestra misión educativa y forman el carácter de nuestros estudiantes
+            </p>
+          </div>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="mvv-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="mvv-icon"><i class="fas fa-heart"></i></div>
+              <h3 class="text-2xl font-bold text-primary mb-4">Formación Católica Basada en Valores</h3>
+              <p class="text-neutral-800">
+                Buscamos que la educación que brindamos esté alineada con los valores familiares de nuestra comunidad,
+                siendo esenciales para formar hombres íntegros.
+              </p>
+            </div>
+            <div class="mvv-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="mvv-icon"><i class="fas fa-pray"></i></div>
+              <h3 class="text-2xl font-bold text-primary mb-4">Formación Espiritual Católica</h3>
+              <p class="text-neutral-800">
+                Fomentamos una profunda conexión con la fe y la espiritualidad. Nuestros alumnos aprenden a vivir los
+                valores cristianos en su vida diaria.
+              </p>
+            </div>
+            <div class="mvv-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="mvv-icon"><i class="fas fa-graduation-cap"></i></div>
+              <h3 class="text-2xl font-bold text-primary mb-4">Excelencia Académica y Personal</h3>
+              <p class="text-neutral-800">
+                Alentamos un amor por el aprendizaje. Nuestros estudiantes desarrollan habilidades críticas y creativas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonios -->
+      <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4">Testimonios de Nuestra Comunidad</h2>
+            <p class="text-lg text-neutral-800">Escucha las experiencias de quienes han vivido nuestra formación</p>
+          </div>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="flex items-center mb-6">
+                <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold">DM
+                </div>
+                <div class="ml-4">
+                  <h4 class="font-semibold text-primary">Daarick Mendoza</h4>
+                  <p class="text-neutral-800">Promoción 2010 - Actor Profesional</p>
+                </div>
+              </div>
+              <p class="text-neutral-800 italic mb-4">"En mi vida profesional me he dado cuenta de lo importante de lo
+                aprendido en el Talent Show: disciplina y desarrollo del personaje en su contexto histórico."</p>
+              <div class="flex text-accent"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            </div>
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="flex items-center mb-6">
+                <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold">CG
+                </div>
+                <div class="ml-4">
+                  <h4 class="font-semibold text-primary">Celso García</h4>
+                  <p class="text-neutral-800">Universidad Sideral Carrion, Santa Clara</p>
+                </div>
+              </div>
+              <p class="text-neutral-800 italic mb-4">"Una de las cosas que el colegio me dio para poder desarrollarme
+                en mi carrera es la habilidad de comunicarme y establecer amistades con personas de diferentes países."
+              </p>
+              <div class="flex text-accent"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            </div>
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="flex items-center mb-6">
+                <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold">FQ
+                </div>
+                <div class="ml-4">
+                  <h4 class="font-semibold text-primary">Familia Quispe</h4>
+                  <p class="text-neutral-800">Padres de Familia</p>
+                </div>
+              </div>
+              <p class="text-neutral-800 italic mb-4">"Si bien en el otro colegio teníamos una buena formación
+                académica, faltaba esa calidez, ese hogar. Es bueno saber que cada persona del colegio no te ve como un
+                número, sino más bien como una familia importante."</p>
+              <div class="flex text-accent"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Estadísticas -->
+      <section class="py-20 bg-gradient-to-r from-primary to-secondary">
+        <div class="container mx-auto px-4 text-center text-white">
+          <h2 class="text-3xl lg:text-4xl font-bold mb-4" data-aos="fade-up">Excelencia en Números</h2>
+          <p class="text-lg mb-12 opacity-90" data-aos="fade-up" data-aos-delay="200">
+            Resultados que demuestran nuestro compromiso con la calidad educativa
+          </p>
+          <div class="grid md:grid-cols-4 gap-8" data-aos="fade-up" data-aos-delay="400">
+            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <div class="text-4xl font-bold mb-2">93%</div>
+              <div class="text-lg">Éxito en Diploma IB</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <div class="text-4xl font-bold mb-2">60</div>
+              <div class="text-lg">Hectáreas de Campus</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <div class="text-4xl font-bold mb-2">100%</div>
+              <div class="text-lg">Método Singapur</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <div class="text-4xl font-bold mb-2">10+</div>
+              <div class="text-lg">Disciplinas Deportivas</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Campus -->
+      <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+              <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-6">Un Campus Excepcional</h2>
+              <p class="text-lg text-neutral-800 mb-8">
+                Nuestro extenso campus de 60 hectáreas es más que un lugar de aprendizaje. Es un espacio que inspira a
+                nuestros alumnos a explorar, descubrir y crecer.
+              </p>
+              <div class="space-y-4">
+                <div class="flex items-center">
+                  <div class="bg-primary text-white p-2 rounded-lg mr-4"><i class="fas fa-map-marker-alt"></i></div>
+                  <span>60 hectáreas de infraestructura moderna</span>
+                </div>
+                <div class="flex items-center">
+                  <div class="bg-primary text-white p-2 rounded-lg mr-4"><i class="fas fa-users"></i></div>
+                  <span>Comunidad educativa unida</span>
+                </div>
+                <div class="flex items-center">
+                  <div class="bg-primary text-white p-2 rounded-lg mr-4"><i class="fas fa-heart"></i></div>
+                  <span>Participación activa de los padres</span>
+                </div>
+              </div>
+            </div>
+            <div data-aos="fade-left">
+              <img
+                src="https://images.theconversation.com/files/270544/original/file-20190423-175514-1rng58t.jpg?ixlib=rb-4.1.0&rect=6%2C0%2C4236%2C2828&q=20&auto=format&w=320&fit=clip&dpr=2&usm=12&cs=strip"
+                alt="Campus del Colegio" class="rounded-lg shadow-lg" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="py-20 bg-neutral-50">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4">Nuestra Propuesta Educativa</h2>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon-container"><i class="fas fa-graduation-cap"></i></div>
+              <h3 class="text-xl font-semibold text-primary mb-3">Acompañamiento Permanente</h3>
+              <p class="text-neutral-800">Plan Personal del Alumno (PPA) con atención individualizada</p>
+            </div>
+            <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon-container"><i class="fas fa-globe"></i></div>
+              <h3 class="text-xl font-semibold text-primary mb-3">Cursos en Inglés</h3>
+              <p class="text-neutral-800">Desde Early Years y tercer idioma desde 3er grado</p>
+            </div>
+            <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon-container"><i class="fas fa-hands-helping"></i></div>
+              <h3 class="text-xl font-semibold text-primary mb-3">Experiencias Solidarias</h3>
+              <p class="text-neutral-800">Proyectos de servicio a lo largo de la vida escolar</p>
+            </div>
+            <div class="benefit-card" data-aos="fade-up" data-aos-delay="400">
+              <div class="icon-container"><i class="fas fa-robot"></i></div>
+              <h3 class="text-xl font-semibold text-primary mb-3">STEAM y Tecnología</h3>
+              <p class="text-neutral-800">MakerSpace para proyectos tecnológicos innovadores</p>
+            </div>
+            <div class="benefit-card" data-aos="fade-up" data-aos-delay="500">
+              <div class="icon-container"><i class="fas fa-palette"></i></div>
+              <h3 class="text-xl font-semibold text-primary mb-3">Programa de Arte</h3>
+              <p class="text-neutral-800">Cine, artes visuales, música y teatro</p>
+            </div>
+            <div class="benefit-card" data-aos="fade-up" data-aos-delay="600">
+              <div class="icon-container"><i class="fas fa-plane"></i></div>
+              <h3 class="text-xl font-semibold text-primary mb-3">Viajes de Estudios</h3>
+              <p class="text-neutral-800">Experiencias nacionales e internacionales</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Login Page Content -->
+    <div id="login-page" class="page-content hidden">
+      <div class="login-container min-h-screen flex items-center justify-center relative overflow-hidden">
+        <!-- Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-primary"></div>
+        <div class="absolute inset-0 bg-cover bg-center opacity-20" style="
+              background-image: url('https://images.pexels.com/photos/8471783/pexels-photo-8471783.jpeg');
+            "></div>
+
+        <!-- Back to Site Button -->
+        <button onclick="navigateTo('home')"
+          class="absolute top-6 right-6 text-white hover:text-accent transition-colors z-30">
+          <i class="fas fa-arrow-left mr-2"></i>Volver al sitio web
+        </button>
+
+        <div class="relative z-20 w-full max-w-md mx-4">
+          <!-- User Type Tabs -->
+          <div class="user-tabs mb-6" data-aos="fade-up">
+            <button class="user-tab active" onclick="switchUserType('padres')" data-type="padres">
+              <i class="fas fa-user-friends"></i>
+              <span>Padres</span>
+            </button>
+            <button class="user-tab" onclick="switchUserType('estudiantes')" data-type="estudiantes">
+              <i class="fas fa-user-graduate"></i>
+              <span>Estudiantes</span>
+            </button>
+            <button class="user-tab" onclick="switchUserType('docentes')" data-type="docentes">
+              <i class="fas fa-chalkboard-teacher"></i>
+              <span>Docentes</span>
+            </button>
+          </div>
+
+          <!-- Login Card -->
+          <div class="login-card" data-aos="fade-up" data-aos-delay="200">
+            <!-- Logo -->
+            <div class="text-center mb-8">
+              <div
+                class="bg-primary text-white p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                <i class="fas fa-graduation-cap text-2xl"></i>
+              </div>
+              <h1 class="text-2xl font-bold text-primary">
+                Portal Educativo
+              </h1>
+              <p class="text-neutral-800">CEP Mi Mundo Feliz</p>
+            </div>
+
+            <!-- Login Form -->
+            <form id="login-form" class="space-y-6">
+              <div class="user-type-description text-center mb-6 p-4 bg-secondary/10 rounded-lg">
+                <p id="user-description" class="text-sm text-neutral-800">
+                  Acceso para padres de familia - Consulta notas, asistencias
+                  y comunicaciones
+                </p>
+              </div>
+
+              <div class="form-group">
+                <label for="username" class="form-label">Usuario o Email</label>
+                <div class="input-container">
+                  <i class="fas fa-user input-icon"></i>
+                  <input type="text" id="username" name="username" class="form-input pl-10"
+                    placeholder="Ingresa tu usuario o email" required />
+                </div>
+                <div class="error-message hidden"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="password" class="form-label">Contraseña</label>
+                <div class="input-container">
+                  <i class="fas fa-lock input-icon"></i>
+                  <input type="password" id="password" name="password" class="form-input pl-10 pr-10"
+                    placeholder="Ingresa tu contraseña" required />
+                  <button type="button" onclick="togglePasswordVisibility()"
+                    class="absolute right-3 top-1/2 transform -translate-y-1/2 text-neutral-600 hover:text-primary">
+                    <i id="password-toggle" class="fas fa-eye"></i>
+                  </button>
+                </div>
+                <div class="error-message hidden"></div>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <label class="flex items-center">
+                  <input type="checkbox" id="remember" name="remember" class="form-checkbox" />
+                  <span class="ml-2 text-sm text-neutral-800">Recordarme</span>
+                </label>
+                <button type="button" onclick="showRecoveryModal()"
+                  class="text-sm text-secondary hover:text-accent transition-colors">
+                  ¿Olvidaste tu contraseña?
+                </button>
+              </div>
+
+              <button type="submit" class="btn-primary w-full py-3 text-lg font-semibold">
+                <i class="fas fa-sign-in-alt mr-2"></i>INICIAR SESIÓN
+              </button>
+            </form>
+
+            <!-- Additional Options -->
+            <div class="mt-8 text-center border-t border-neutral-200 pt-6">
+              <p class="text-sm text-neutral-600 mb-4">¿No tienes cuenta?</p>
+              <button onclick="navigateTo('contacto')" class="text-secondary hover:text-accent transition-colors">
+                <i class="fas fa-envelope mr-1"></i>Contáctanos para obtener
+                acceso
+              </button>
+            </div>
+
+            <!-- Demo Button -->
+            <div class="mt-6">
+              <button onclick="showDemoModal()"
+                class="w-full py-2 text-neutral-600 hover:text-primary transition-colors border border-neutral-200 rounded-lg">
+                <i class="fas fa-play mr-2"></i>Ver demo del sistema
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer" class="bg-primary text-white py-16">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8">
+        <!-- Logo Column -->
+        <div class="md:col-span-2">
+          <div class="flex items-center space-x-3 mb-6">
+            <div class="bg-accent text-white p-3 rounded-lg">
+              <i class="fas fa-graduation-cap text-2xl"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold">CEP MI MUNDO FELIZ</h3>
+              <p class="text-white/80">
+                Formando mentes, transformando vidas
+              </p>
+            </div>
+          </div>
+          <p class="text-white/80 mb-6 max-w-md">
+            Comprometidos con la excelencia educativa y el desarrollo integral
+            de nuestros estudiantes desde 2009.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="social-link">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" onclick="navigateTo('home')" class="footer-link">Inicio</a>
+            </li>
+            <li>
+              <a href="#" onclick="navigateTo('nosotros')" class="footer-link">Nosotros</a>
+            </li>
+            <li>
+              <a href="#" onclick="navigateTo('contacto')" class="footer-link">Contacto</a>
+            </li>
+            <li>
+              <a href="#" onclick="navigateTo('login')" class="footer-link">Iniciar Sesión</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Contacto</h4>
+          <ul class="space-y-2 text-white/80">
+            <li>
+              <i class="fas fa-map-marker-alt mr-2"></i>
+              Av. Principal 123, Lima
+            </li>
+            <li>
+              <i class="fas fa-phone mr-2"></i>
+              +51 987 654 321
+            </li>
+            <li>
+              <i class="fas fa-envelope mr-2"></i>
+              info@mimdofeliz.edu.pe
+            </li>
+            <li>
+              <i class="fas fa-clock mr-2"></i>
+              Lun - Vie: 7:30am - 4:00pm
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-white/20 mt-12 pt-8 text-center">
+        <p class="text-white/60">
+          &copy; 2024 CEP Mi Mundo Feliz. Todos los derechos reservados.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Elements -->
+  <div class="floating-elements">
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/51987654321" target="_blank" class="whatsapp-btn" title="Escríbenos por WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" onclick="scrollToTop()" title="Volver arriba">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+  </div>
+
+  <!-- Recovery Modal -->
+  <div id="recovery-modal" class="modal hidden">
+    <div class="modal-overlay" onclick="hideRecoveryModal()"></div>
+    <div class="modal-content" data-aos="zoom-in">
+      <div class="modal-header">
+        <h3 class="text-xl font-semibold text-primary">
+          Recuperar Contraseña
+        </h3>
+        <button onclick="hideRecoveryModal()" class="modal-close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="text-neutral-800 mb-4">
+          Ingresa tu email para recibir un enlace de recuperación
+        </p>
+        <form id="recovery-form">
+          <div class="form-group mb-4">
+            <label for="recovery-email" class="form-label">Email</label>
+            <input type="email" id="recovery-email" name="recovery-email" class="form-input" placeholder="tu@email.com"
+              required />
+          </div>
+          <button type="submit" class="btn-primary w-full py-2">
+            <i class="fas fa-paper-plane mr-2"></i>Enviar enlace de
+            recuperación
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Demo Modal -->
+  <div id="demo-modal" class="modal hidden">
+    <div class="modal-overlay" onclick="hideDemoModal()"></div>
+    <div class="modal-content large" data-aos="zoom-in">
+      <div class="modal-header">
+        <h3 class="text-xl font-semibold text-primary">
+          Demo del Sistema Educativo
+        </h3>
+        <button onclick="hideDemoModal()" class="modal-close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div class="demo-feature">
+            <img src="https://images.pexels.com/photos/5428833/pexels-photo-5428833.jpeg" alt="Dashboard"
+              class="demo-screenshot" />
+            <h4 class="font-semibold text-primary mt-3">
+              Dashboard Principal
+            </h4>
+            <p class="text-neutral-800 text-sm">
+              Vista general del progreso académico
+            </p>
+          </div>
+          <div class="demo-feature">
+            <img src="https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg" alt="Notas"
+              class="demo-screenshot" />
+            <h4 class="font-semibold text-primary mt-3">Consulta de Notas</h4>
+            <p class="text-neutral-800 text-sm">
+              Calificaciones detalladas por materia
+            </p>
+          </div>
+        </div>
+        <div class="text-center">
+          <button class="btn-accent px-6 py-2">
+            <i class="fas fa-user-plus mr-2"></i>Solicitar Acceso
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notifications -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
