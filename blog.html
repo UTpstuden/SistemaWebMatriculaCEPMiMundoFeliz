@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog San Pedro - Últimas Noticias</title>
+  <link rel="stylesheet" href="assets/css/blog.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#07132B",
+            secondary: "#4A90E2",
+            accent: "#FF6B35",
+            neutral: {
+              50: "#FFFFFF",
+              100: "#F5F5F5",
+              200: "#E5E5E5",
+              800: "#333333",
+            },
+          },
+          fontFamily: {
+            poppins: ["Poppins", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="font-poppins bg-white">
+  <!-- HEADER -->
+  <header id="header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/90 backdrop-blur-sm">
+    <nav class="container mx-auto px-4 py-4">
+      <div class="flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center space-x-3 cursor-pointer" onclick="navigateTo('home')">
+          <div class="bg-primary text-white p-2 rounded-lg">
+            <i class="fas fa-graduation-cap text-xl"></i>
+          </div>
+          <div>
+            <h1 class="text-lg font-bold text-primary">CEP MI MUNDO FELIZ</h1>
+            <p class="text-xs text-neutral-800">
+              Formando mentes, transformando vidas
+            </p>
+          </div>
+        </div>
+
+        <div class="hidden lg:flex items-center space-x-8 text-black">
+          <a href="index.html#hero" class="nav-link active text-black">Inicio</a>
+          <a href="index.html#nosotros" class="nav-link text-black">Nosotros</a>
+          <a href="blog.html" class="nav-link text-black">Blog</a>
+          <a href="estudiar-aqui.html" class="nav-link text-black">¿Porque estudiar aquí?</a>
+          <a href="index.html#contacto" class="nav-link text-black">Contacto</a>
+          <a href="index.html#matricula" class="nav-link text-black">Matrícula</a>
+          <a href="index.html#login-modal" class="btn-primary px-6 py-2 text-white bg-primary">
+            <i class="fas fa-sign-in-alt mr-2"></i>Iniciar Sesión
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="lg:hidden text-black" onclick="toggleMobileMenu()">
+          <i class="fas fa-bars text-xl" id="menu-icon"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="lg:hidden mt-4 pb-4 border-t border-neutral-200 hidden">
+        <div class="flex flex-col space-y-4 mt-4 text-black">
+          <a href="index.html#hero" class="nav-link-mobile text-black">Inicio</a>
+          <a href="index.html#nosotros" class="nav-link-mobile text-black">Nosotros</a>
+          <a href="blog.html" class="nav-link-mobile text-black">Blog</a>
+          <a href="estudiar-aqui.html" class="nav-link-mobile text-black">Porque estudiar aquí</a>
+          <a href="index.html#contacto" class="nav-link-mobile text-black">Contacto</a>
+          <a href="index.html#matricula" class="nav-link-mobile text-black">Matrícula</a>
+          <a href="index.html#login-modal" class="btn-primary w-full py-3 mt-4 text-white bg-primary">
+            <i class="fas fa-sign-in-alt mr-2"></i>Iniciar Sesión
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="main" style="padding-top: 80px;">
+    <div class="container">
+      <section class="hero">
+        <h2 class="hero-title">Últimas Noticias</h2>
+        <p class="hero-subtitle">Mantente informado sobre las últimas novedades de nuestra comunidad educativa</p>
+      </section>
+
+      <section class="articles">
+        <div class="articles-grid">
+          <article class="article-card featured">
+            <!-- Added image for Jubileo 2025 article -->
+            <div class="article-image">
+              <img
+                src="https://www.archisevilla.org/wp-content/uploads/2024/07/Jubileo-2025-logo-web.jpg?height=200&width=400"
+                alt="Jubileo 2025 - Celebración católica" />
+            </div>
+            <div class="article-content">
+              <span class="article-badge">Destacado</span>
+              <h3 class="article-title">Jubileo 2025: En qué consiste y cómo vivirlo como comunidad católica</h3>
+              <p class="article-excerpt">Para las familias de colegios con enseñanza católica, el Jubileo es una gran
+                oportunidad de vivir en comunidad los valores que promueve la Iglesia.</p>
+              <a href="#" class="article-link">Leer más</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <!-- Added image for career guidance article -->
+            <div class="article-image">
+              <img
+                src="https://blogs.ucontinental.edu.pe/wp-content/uploads/2019/05/ayudar-hijo-elegir-carrera-profesional-universidad-continental.jpg?height=150&width=300"
+                alt="Orientación vocacional universitaria" />
+            </div>
+            <div class="article-content">
+              <h3 class="article-title">Cómo ayudar a mi hijo a escoger una carrera y universidad</h3>
+              <p class="article-excerpt">Con los consejos de San Pedro, un colegio privado para niños en Lima, sabrás
+                cómo ayudar a tu hija a escoger una carrera y universidad.</p>
+              <a href="#" class="article-link">Leer más</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <!-- Added image for School Games article -->
+            <div class="article-image">
+              <img
+                src="https://sanpedro.vc-sp.edu.pe/wp-content/uploads/2025/07/como-las-aulas-modernas-mejoran-el-rendimiento-y-la-atencion-de-los-alumnos-villa-caritas-1080x675.webp?height=150&width=300"
+                alt="School Games - Juegos deportivos escolares" />
+            </div>
+            <div class="article-content">
+              <h3 class="article-title">School Games: Nuestra tradición escolar que enseña valores para toda la vida
+              </h3>
+              <p class="article-excerpt">Estos juegos, que se celebran cada año, van mucho más allá de una competencia
+                deportiva. Fomentan el liderazgo y valores en hombres.</p>
+              <a href="#" class="article-link">Leer más</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <!-- Added image for Father's Day article -->
+            <div class="article-image">
+              <img
+                src="https://sanpedro.vc-sp.edu.pe/wp-content/uploads/2025/07/dia-del-padre-el-mejor-momento-para-reconocer-su-papel-en-la-familia-san-pedro.webp?height=150&width=300"
+                alt="Día del Padre - Familia unida" />
+            </div>
+            <div class="article-content">
+              <h3 class="article-title">Día del Padre: El mejor momento para reconocer su papel en la familia</h3>
+              <p class="article-excerpt">En una comunidad educativa para familias en Lima, ser padre no es simbólico,
+                sino que se reconoce y promueve a través de actividades familiares.</p>
+              <a href="#" class="article-link">Leer más</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <!-- Added image for extracurricular activities article -->
+            <div class="article-image">
+              <img
+                src="https://villacaritas.vc-sp.edu.pe/wp-content/uploads/2025/08/equilibrio-entre-estudio-y-actividades-extracurriculares-como-lograrlo-villa-caritas.webp?height=150&width=300"
+                alt="Actividades extracurriculares estudiantiles" />
+            </div>
+            <div class="article-content">
+              <h3 class="article-title">Equilibrio entre estudio y actividades extracurriculares: ¿cómo lograrlo?</h3>
+              <p class="article-excerpt">Los colegios con actividades extracurriculares en La Molina promueven
+                experiencias que potencian el aprendizaje y el crecimiento personal.</p>
+              <a href="#" class="article-link">Leer más</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <!-- Added image for concentration strategies article -->
+            <div class="article-image">
+              <img src="https://ilvemecuador.com/wp-content/uploads/2023/05/image-376-1024x538.png?height=150&width=300"
+                alt="Estudiante concentrado en clase" />
+            </div>
+            <div class="article-content">
+              <h3 class="article-title">Estrategias efectivas para mejorar la concentración y la atención en clase</h3>
+              <p class="article-excerpt">Un colegio con innovación educativa es una opción acertada para el desarrollo
+                de tus hijos, ya que ofrece espacios estimulantes y adaptados.</p>
+              <a href="#" class="article-link">Leer más</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <!-- Added image for bilingual education article -->
+            <div class="article-image">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX4lcvSXLBs-bnE7euYZp8znLao3_Y-PEs_w&s?height=150&width=300"
+                alt="Educación bilingüe en inglés" />
+            </div>
+            <div class="article-content">
+              <h3 class="article-title">Cómo el inglés en la infancia contribuye al futuro académico y profesional</h3>
+              <p class="article-excerpt">Las familias optan por inscribir a sus hijos en un colegio primaria bilingüe,
+                donde el aprendizaje del idioma se integra de manera natural y efectiva.</p>
+              <a href="#" class="article-link">Leer más</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <!-- Added image for emotional management article -->
+            <div class="article-image">
+              <img
+                src="https://sanpedro.vc-sp.edu.pe/wp-content/uploads/2025/07/guia-para-padres-ensena-a-tu-hijo-a-manejar-la-frustracion-saludablemente-san-pedro.webp?height=150&width=300"
+                alt="Manejo de emociones infantiles" />
+            </div>
+            <div class="article-content">
+              <h3 class="article-title">Guía para padres: Enseña a tu hijo a manejar la frustración saludablemente</h3>
+              <p class="article-excerpt">La formación académica y humana para niños debe empezar desde los primeros
+                años, enseñándoles a reconocer sus emociones y expresarlas.</p>
+              <a href="#" class="article-link">Leer más</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <!-- Added image for teenage communication article -->
+            <div class="article-image">
+              <img
+                src="https://villacaritas.vc-sp.edu.pe/wp-content/uploads/2025/08/errores-comunes-al-intentar-conectar-con-tu-hijo-adolescente-y-como-evitarlos.webp?height=150&width=300"
+                alt="Comunicación padre e hijo adolescente" />
+            </div>
+            <div class="article-content">
+              <h3 class="article-title">Errores comunes al intentar conectar con tu hijo adolescente y cómo evitarlos
+              </h3>
+              <p class="article-excerpt">Un colegio que prioriza la formación integral para adolescentes hombres fomenta
+                espacios seguros donde padres e hijos aprenden a comunicarse.</p>
+              <a href="#" class="article-link">Leer más</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <!-- Added image for nature education article -->
+            <div class="article-image">
+              <img src="https://www.campuseducacion.com/blog/wp-content/uploads/2024/04/foto02.jpg?height=150&width=300"
+                alt="Educación en contacto con la naturaleza" />
+            </div>
+            <div class="article-content">
+              <h3 class="article-title">Educación en contacto con la naturaleza: el valor de tener un colegio con áreas
+                verdes</h3>
+              <p class="article-excerpt">Los colegios San Pedro y Villa Caritas cuentan con una infraestructura de 60
+                hectáreas ubicada en un entorno natural único en La Molina.</p>
+              <a href="#" class="article-link">Leer más</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <!-- Added image for modern classrooms article -->
+            <div class="article-image">
+              <img
+                src="https://villacaritas.vc-sp.edu.pe/wp-content/uploads/2025/07/como-las-aulas-modernas-mejoran-el-rendimiento-y-la-atencion-de-los-alumnos-san-pedro.webp?height=150&width=300"
+                alt="Aulas modernas con tecnología" />
+            </div>
+            <div class="article-content">
+              <h3 class="article-title">Cómo las aulas modernas mejoran el rendimiento y la atención de los alumnos</h3>
+              <p class="article-excerpt">Es importante contar con infraestructura moderna en colegios de Lima, ya que
+                esta impacta directamente en el rendimiento de los estudiantes.</p>
+              <a href="#" class="article-link">Leer más</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="pagination">
+          <button class="pagination-btn" disabled>« Anterior</button>
+          <span class="pagination-info">Página 1 de 3</span>
+          <button class="pagination-btn">Siguiente »</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer" class="bg-primary text-white py-16">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8">
+        <!-- Logo and Description -->
+        <div class="md:col-span-2">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="bg-accent text-white p-3 rounded-lg">
+              <i class="fas fa-graduation-cap text-2xl"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold">CEP MI MUNDO FELIZ</h3>
+              <p class="text-white/80">
+                Formando mentes, transformando vidas
+              </p>
+            </div>
+          </div>
+          <p class="text-neutral-300 mb-4">
+            Centro Educativo Particular Mi Mundo Feliz es una institución dedicada a la formación integral de niños y
+            jóvenes, con valores cristianos y excelencia académica.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-neutral-300 hover:text-white transition-colors">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="text-neutral-300 hover:text-white transition-colors">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="text-neutral-300 hover:text-white transition-colors">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="text-neutral-300 hover:text-white transition-colors">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
