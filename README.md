@@ -1,7 +1,9 @@
-🎓 Presentación del Proyecto: Sistema Web de Matrícula – CEPMiMundoFeliz
-📌 Introducción
+### 🎓 Presentación del Proyecto: Sistema Web de Matrícula – CEPMiMundoFeliz
 
-🎯 Objetivos del Proyecto
+## 📌 Introducción
+El proyecto Sistema Web de Matrícula CEPMiMundoFeliz busca digitalizar y optimizar los procesos administrativos y académicos de una institución educativa. Está diseñado para facilitar la gestión de usuarios, matrículas, asistencias, pagos y notas, brindando una plataforma accesible y organizada para administradores, secretarias, profesores y estudiantes.
+
+## 🎯 Objetivos del Proyecto
 
 Automatizar los procesos de matrícula y registro académico.
 
@@ -11,7 +13,7 @@ Optimizar el control de asistencias, pagos y notas.
 
 Facilitar el trabajo de cada rol dentro de la institución.
 
-El proyecto Sistema Web de Matrícula CEPMiMundoFeliz busca digitalizar y optimizar los procesos administrativos y académicos de una institución educativa. Está diseñado para facilitar la gestión de usuarios, matrículas, asistencias, pagos y notas, brindando una plataforma accesible y organizada para administradores, secretarias, profesores y estudiantes.
+
 
 🛠️ Tecnologías Utilizadas
 
