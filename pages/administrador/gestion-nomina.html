@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Nómina - CEP Mi Mundo Feliz</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dashboard.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#07132B",
+                        secondary: "#4A90E2",
+                        accent: "#FF6B35",
+                        neutral: {
+                            50: "#FFFFFF",
+                            100: "#F5F5F5",
+                            200: "#E5E5E5",
+                            800: "#333333",
+                        },
+                    },
+                    fontFamily: {
+                        poppins: ["Poppins", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="font-poppins bg-neutral-100">
+    
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <div class="flex items-center space-x-3">
+                <button onclick="toggleSidebar()" class="text-white hover:text-accent transition-colors mr-2">
+                    <i class="fas fa-bars text-lg"></i>
+                </button>
+                <div class="bg-white text-primary p-2 rounded-lg">
+                    <i class="fas fa-graduation-cap text-xl"></i>
+                </div>
+                <div class="sidebar-title">
+                    <h1 class="text-lg font-bold text-white">CEP MI MUNDO FELIZ</h1>
+                    <p class="text-xs text-white/80">Sistema Educativo</p>
+                </div>
+            </div>
+            <button onclick="toggleSidebar()" class="text-white hover:text-accent transition-colors lg:hidden">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+        </div>
+        
+        <nav class="sidebar-nav" id="sidebarNav">
+            <!-- Navigation items will be populated by JavaScript -->
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="flex items-center space-x-3 mb-4">
+                <div class="bg-white/20 p-2 rounded-full">
+                    <i class="fas fa-user text-white"></i>
+                </div>
+                <div>
+                    <p class="text-white font-medium" id="userDisplayName">Administrador</p>
+                    <p class="text-white/70 text-sm" id="userRole">Administrador</p>
+                </div>
+            </div>
+            <button onclick="logout()" class="w-full bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg transition-colors">
+                <i class="fas fa-sign-out-alt mr-2"></i>Cerrar Sesión
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Top Header -->
+        <header class="bg-white shadow-sm border-b border-neutral-200 px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <button onclick="toggleSidebar()" class="text-neutral-600 hover:text-primary transition-colors lg:hidden">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                    <h1 class="text-2xl font-bold text-primary">Gestión de Nómina</h1>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <button onclick="generatePayroll()" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                        <i class="fas fa-calculator mr-2"></i>Generar Nómina
+                    </button>
+                    <button onclick="showPayrollModal()" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+                        <i class="fas fa-plus mr-2"></i>Nuevo Empleado
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <main class="p-6">
+            <!-- Statistics Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white rounded-xl shadow-sm p-6 border border-neutral-200">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-neutral-600 text-sm">Total Empleados</p>
+                            <p class="text-2xl font-bold text-primary">58</p>
+                        </div>
+                        <div class="bg-blue-100 p-3 rounded-full">
+                            <i class="fas fa-users text-blue-600 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm p-6 border border-neutral-200">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-neutral-600 text-sm">Nómina Mensual</p>
+                            <p class="text-2xl font-bold text-green-600">S/. 125,400</p>
+                        </div>
+                        <div class="bg-green-100 p-3 rounded-full">
+                            <i class="fas fa-money-bill-wave text-green-600 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm p-6 border border-neutral-200">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-neutral-600 text-sm">Pagos Pendientes</p>
+                            <p class="text-2xl font-bold text-orange-600">3</p>
+                        </div>
+                        <div class="bg-orange-100 p-3 rounded-full">
+                            <i class="fas fa-clock text-orange-600 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm p-6 border border-neutral-200">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-neutral-600 text-sm">Bonificaciones</p>
+                            <p class="text-2xl font-bold text-purple-600">S/. 8,500</p>
+                        </div>
+                        <div class="bg-purple-100 p-3 rounded-full">
+                            <i class="fas fa-gift text-purple-600 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payroll Table -->
+            <div class="bg-white rounded-xl shadow-sm border border-neutral-200">
+                <div class="p-6 border-b border-neutral-200">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-lg font-semibold text-primary">Nómina de Empleados</h3>
+                        <div class="flex items-center space-x-4">
+                            <select class="border border-neutral-300 rounded-lg px-3 py-2 text-sm">
+                                <option value="">Todos los departamentos</option>
+                                <option value="docente">Docentes</option>
+                                <option value="administrativo">Administrativo</option>
+                                <option value="mantenimiento">Mantenimiento</option>
+                            </select>
+                            <input type="month" class="border border-neutral-300 rounded-lg px-3 py-2 text-sm" value="2024-01">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-neutral-50">
+                            <tr>
+                                <th class="text-left py-3 px-6 text-sm font-medium text-neutral-600">Empleado</th>
+                                <th class="text-left py-3 px-6 text-sm font-medium text-neutral-600">Cargo</th>
+                                <th class="text-left py-3 px-6 text-sm font-medium text-neutral-600">Sueldo Base</th>
+                                <th class="text-left py-3 px-6 text-sm font-medium text-neutral-600">Bonificaciones</th>
+                                <th class="text-left py-3 px-6 text-sm font-medium text-neutral-600">Descuentos</th>
+                                <th class="text-left py-3 px-6 text-sm font-medium text-neutral-600">Total</th>
+                                <th class="text-left py-3 px-6 text-sm font-medium text-neutral-600">Estado</th>
+                                <th class="text-left py-3 px-6 text-sm font-medium text-neutral-600">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="payrollTableBody">
+                            <!-- Payroll data will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Overlay for mobile sidebar -->
+    <div id="sidebarOverlay" class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/dashboard.js"></script>
+    <script src="../../assets/js/gestion-nomina.js"></script>
+</body>
+</html>

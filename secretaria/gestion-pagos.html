@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Pagos - CEP Mi Mundo Feliz</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dashboard.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#07132B",
+                        secondary: "#4A90E2",
+                        accent: "#FF6B35",
+                        neutral: {
+                            50: "#FFFFFF",
+                            100: "#F5F5F5",
+                            200: "#E5E5E5",
+                            800: "#333333",
+                        },
+                    },
+                    fontFamily: {
+                        poppins: ["Poppins", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="font-poppins bg-neutral-100">
+    
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <div class="flex items-center space-x-3">
+                <button onclick="toggleSidebar()" class="text-white hover:text-accent transition-colors mr-2">
+                    <i class="fas fa-bars text-lg"></i>
+                </button>
+                <div class="bg-white text-primary p-2 rounded-lg">
+                    <i class="fas fa-graduation-cap text-xl"></i>
+                </div>
+                <div class="sidebar-title">
+                    <h1 class="text-lg font-bold text-white">CEP MI MUNDO FELIZ</h1>
+                    <p class="text-xs text-white/80">Sistema Educativo</p>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav" id="sidebarNav">
+            <!-- Navigation items will be populated by JavaScript -->
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="flex items-center space-x-3 mb-4">
+                <div class="bg-white/20 p-2 rounded-full">
+                    <i class="fas fa-user text-white"></i>
+                </div>
+                <div>
+                    <p class="text-white font-medium" id="userDisplayName">Secretaria</p>
+                    <p class="text-white/70 text-sm" id="userRole">Secretaria</p>
+                </div>
+            </div>
+            <button onclick="logout()" class="w-full bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg transition-colors">
+                <i class="fas fa-sign-out-alt mr-2"></i>Cerrar Sesión
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Top Header -->
+        <header class="bg-white shadow-sm border-b border-neutral-200 px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <button onclick="toggleSidebar()" class="text-neutral-600 hover:text-primary transition-colors lg:hidden">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                    <h1 class="text-2xl font-bold text-primary">Gestión de Pagos</h1>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <button onclick="window.location.href='../dashboard.html'" class="bg-secondary text-white px-4 py-2 rounded-lg hover:bg-secondary/90 transition-colors">
+                        <i class="fas fa-arrow-left mr-2"></i>Volver al Dashboard
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <main class="p-6">
+            <!-- Payment Statistics -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white rounded-xl shadow-sm p-6 border border-neutral-200">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-neutral-600 text-sm">Pagos Pendientes</p>
+                            <p class="text-2xl font-bold text-red-500">S/ 45,230</p>
+                        </div>
+                        <div class="bg-red-100 p-3 rounded-full">
+                            <i class="fas fa-exclamation-triangle text-red-600 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm p-6 border border-neutral-200">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-neutral-600 text-sm">Pagos del Mes</p>
+                            <p class="text-2xl font-bold text-green-500">S/ 128,450</p>
+                        </div>
+                        <div class="bg-green-100 p-3 rounded-full">
+                            <i class="fas fa-check-circle text-green-600 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm p-6 border border-neutral-200">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-neutral-600 text-sm">Total Recaudado</p>
+                            <p class="text-2xl font-bold text-primary">S/ 892,340</p>
+                        </div>
+                        <div class="bg-blue-100 p-3 rounded-full">
+                            <i class="fas fa-coins text-blue-600 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm p-6 border border-neutral-200">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-neutral-600 text-sm">Estudiantes Morosos</p>
+                            <p class="text-2xl font-bold text-accent">23</p>
+                        </div>
+                        <div class="bg-orange-100 p-3 rounded-full">
+                            <i class="fas fa-user-clock text-orange-600 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Management -->
+            <div class="bg-white rounded-xl shadow-sm border border-neutral-200 p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-xl font-semibold text-primary">Gestión de Pagos</h2>
+                    <div class="flex space-x-3">
+                        <button onclick="showPaymentModal()" class="bg-accent text-white px-4 py-2 rounded-lg hover:bg-accent/90 transition-colors">
+                            <i class="fas fa-plus mr-2"></i>Registrar Pago
+                        </button>
+                        <button onclick="generateReport()" class="bg-secondary text-white px-4 py-2 rounded-lg hover:bg-secondary/90 transition-colors">
+                            <i class="fas fa-file-pdf mr-2"></i>Generar Reporte
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Search and Filters -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                    <input type="text" placeholder="Buscar estudiante..." class="border border-neutral-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-secondary">
+                    <select class="border border-neutral-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-secondary">
+                        <option>Todos los grados</option>
+                        <option>1° Primaria</option>
+                        <option>2° Primaria</option>
+                        <option>3° Primaria</option>
+                        <option>4° Primaria</option>
+                        <option>5° Primaria</option>
+                        <option>6° Primaria</option>
+                    </select>
+                    <select class="border border-neutral-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-secondary">
+                        <option>Estado del pago</option>
+                        <option>Pagado</option>
+                        <option>Pendiente</option>
+                        <option>Vencido</option>
+                    </select>
+                    <select class="border border-neutral-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-secondary">
+                        <option>Tipo de pago</option>
+                        <option>Pensión</option>
+                        <option>Matrícula</option>
+                        <option>Materiales</option>
+                        <option>Actividades</option>
+                    </select>
+                </div>
+
+                <!-- Payments Table -->
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-neutral-100">
+                            <tr>
+                                <th class="text-left p-4 font-semibold text-neutral-700">Estudiante</th>
+                                <th class="text-left p-4 font-semibold text-neutral-700">Grado</th>
+                                <th class="text-left p-4 font-semibold text-neutral-700">Concepto</th>
+                                <th class="text-left p-4 font-semibold text-neutral-700">Monto</th>
+                                <th class="text-left p-4 font-semibold text-neutral-700">Vencimiento</th>
+                                <th class="text-left p-4 font-semibold text-neutral-700">Estado</th>
+                                <th class="text-left p-4 font-semibold text-neutral-700">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="paymentsTableBody">
+                            <!-- Payment rows will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-xl p-6 w-full max-w-md mx-4">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-semibold text-primary">Registrar Pago</h3>
+                <button onclick="closePaymentModal()" class="text-neutral-500 hover:text-neutral-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <form id="paymentForm">
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-2">Estudiante</label>
+                        <select class="w-full border border-neutral-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-secondary">
+                            <option>Seleccionar estudiante...</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-2">Concepto</label>
+                        <select class="w-full border border-neutral-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-secondary">
+                            <option>Pensión</option>
+                            <option>Matrícula</option>
+                            <option>Materiales</option>
+                            <option>Actividades</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-2">Monto</label>
+                        <input type="number" step="0.01" class="w-full border border-neutral-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-secondary" placeholder="0.00">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-2">Método de Pago</label>
+                        <select class="w-full border border-neutral-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-secondary">
+                            <option>Efectivo</option>
+                            <option>Transferencia</option>
+                            <option>Tarjeta</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="flex space-x-3 mt-6">
+                    <button type="button" onclick="closePaymentModal()" class="flex-1 bg-neutral-300 text-neutral-700 py-2 px-4 rounded-lg hover:bg-neutral-400 transition-colors">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="flex-1 bg-accent text-white py-2 px-4 rounded-lg hover:bg-accent/90 transition-colors">
+                        Registrar Pago
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/dashboard.js"></script>
+    <script src="../../assets/js/pagos.js"></script>
+</body>
+</html>

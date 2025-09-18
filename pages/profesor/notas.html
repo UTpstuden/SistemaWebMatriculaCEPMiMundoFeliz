@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Notas - CEP Mi Mundo Feliz</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dashboard.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#07132B",
+                        secondary: "#4A90E2",
+                        accent: "#FF6B35",
+                        neutral: {
+                            50: "#FFFFFF",
+                            100: "#F5F5F5",
+                            200: "#E5E5E5",
+                            800: "#333333",
+                        },
+                    },
+                    fontFamily: {
+                        poppins: ["Poppins", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="font-poppins bg-neutral-100">
+    
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <div class="flex items-center space-x-3">
+                <button onclick="toggleSidebar()" class="text-white hover:text-accent transition-colors mr-2">
+                    <i class="fas fa-bars text-lg"></i>
+                </button>
+                <div class="bg-white text-primary p-2 rounded-lg">
+                    <i class="fas fa-graduation-cap text-xl"></i>
+                </div>
+                <div class="sidebar-title">
+                    <h1 class="text-lg font-bold text-white">CEP MI MUNDO FELIZ</h1>
+                    <p class="text-xs text-white/80">Sistema Educativo</p>
+                </div>
+            </div>
+            <button onclick="toggleSidebar()" class="text-white hover:text-accent transition-colors lg:hidden">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+        </div>
+        
+        <nav class="sidebar-nav" id="sidebarNav">
+            <!-- Navigation items will be populated by JavaScript -->
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="flex items-center space-x-3 mb-4">
+                <div class="bg-white/20 p-2 rounded-full">
+                    <i class="fas fa-user text-white"></i>
+                </div>
+                <div>
+                    <p class="text-white font-medium" id="userDisplayName">Profesor</p>
+                    <p class="text-white/70 text-sm" id="userRole">Docente</p>
+                </div>
+            </div>
+            <button onclick="logout()" class="w-full bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg transition-colors">
+                <i class="fas fa-sign-out-alt mr-2"></i>Cerrar Sesión
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Top Header -->
+        <header class="bg-white shadow-sm border-b border-neutral-200 px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <button onclick="toggleSidebar()" class="text-neutral-600 hover:text-primary transition-colors lg:hidden">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                    <h1 class="text-2xl font-bold text-primary">Gestión de Notas</h1>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <button onclick="exportGrades()" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                        <i class="fas fa-download mr-2"></i>Exportar
+                    </button>
+                    <button onclick="showGradeModal()" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+                        <i class="fas fa-plus mr-2"></i>Nueva Nota
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <main class="p-6">
+            <!-- Filters -->
+            <div class="bg-white rounded-xl shadow-sm p-6 border border-neutral-200 mb-6">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">Curso</label>
+                        <select id="courseFilter" class="w-full border border-neutral-300 rounded-lg px-3 py-2">
+                            <option value="">Todos los cursos</option>
+                            <option value="matematicas">Matemáticas</option>
+                            <option value="comunicacion">Comunicación</option>
+                            <option value="ciencias">Ciencias</option>
+                            <option value="historia">Historia</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">Grado</label>
+                        <select id="gradeFilter" class="w-full border border-neutral-300 rounded-lg px-3 py-2">
+                            <option value="">Todos los grados</option>
+                            <option value="1">1° Grado</option>
+                            <option value="2">2° Grado</option>
+                            <option value="3">3° Grado</option>
+                            <option value="4">4° Grado</option>
+                            <option value="5">5° Grado</option>
+                            <option value="6">6° Grado</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">Periodo</label>
+                        <select id="periodFilter" class="w-full border border-neutral-300 rounded-lg px-3 py-2">
+                            <option value="">Todos los periodos</option>
+                            <option value="1">I Bimestre</option>
+                            <option value="2">II Bimestre</option>
+                            <option value="3">III Bimestre</option>
+                            <option value="4">IV Bimestre</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">Buscar Estudiante</label>
+                        <input type="text" id="studentSearch" placeholder="Nombre del estudiante..." class="w-full border border-neutral-300 rounded-lg px-3 py-2">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grades Table -->
+            <div class="bg-white rounded-xl shadow-sm border border-neutral-200">
+                <div class="p-6 border-b border-neutral-200">
+                    <h3 class="text-lg font-semibold text-primary">Registro de Calificaciones</h3>
+                </div>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-neutral-50">
+                            <tr>
+                                <th class="text-left py-3 px-6 text-sm font-medium text-neutral-600">Estudiante</th>
+                                <th class="text-left py-3 px-6 text-sm font-medium text-neutral-600">Curso</th>
+                                <th class="text-left py-3 px-6 text-sm font-medium text-neutral-600">Evaluación</th>
+                                <th class="text-left py-3 px-6 text-sm font-medium text-neutral-600">Nota</th>
+                                <th class="text-left py-3 px-6 text-sm font-medium text-neutral-600">Periodo</th>
+                                <th class="text-left py-3 px-6 text-sm font-medium text-neutral-600">Fecha</th>
+                                <th class="text-left py-3 px-6 text-sm font-medium text-neutral-600">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="gradesTableBody">
+                            <!-- Grades will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Grade Modal -->
+    <div id="gradeModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-xl p-6 w-full max-w-md mx-4">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-semibold text-primary" id="gradeModalTitle">Registrar Nota</h3>
+                <button onclick="closeGradeModal()" class="text-neutral-400 hover:text-neutral-600">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <form id="gradeForm">
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">Estudiante</label>
+                        <select id="gradeStudent" class="w-full border border-neutral-300 rounded-lg px-3 py-2" required>
+                            <option value="">Seleccionar estudiante</option>
+                            <option value="1">Ana García Pérez</option>
+                            <option value="2">Carlos López Martín</option>
+                            <option value="3">María Rodríguez Silva</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">Curso</label>
+                        <select id="gradeCourse" class="w-full border border-neutral-300 rounded-lg px-3 py-2" required>
+                            <option value="">Seleccionar curso</option>
+                            <option value="matematicas">Matemáticas</option>
+                            <option value="comunicacion">Comunicación</option>
+                            <option value="ciencias">Ciencias</option>
+                            <option value="historia">Historia</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">Tipo de Evaluación</label>
+                        <select id="gradeType" class="w-full border border-neutral-300 rounded-lg px-3 py-2" required>
+                            <option value="">Seleccionar tipo</option>
+                            <option value="examen">Examen</option>
+                            <option value="practica">Práctica</option>
+                            <option value="tarea">Tarea</option>
+                            <option value="proyecto">Proyecto</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">Nota (0-20)</label>
+                        <input type="number" id="gradeScore" min="0" max="20" step="0.1" class="w-full border border-neutral-300 rounded-lg px-3 py-2" required>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">Periodo</label>
+                        <select id="gradePeriod" class="w-full border border-neutral-300 rounded-lg px-3 py-2" required>
+                            <option value="">Seleccionar periodo</option>
+                            <option value="1">I Bimestre</option>
+                            <option value="2">II Bimestre</option>
+                            <option value="3">III Bimestre</option>
+                            <option value="4">IV Bimestre</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">Observaciones</label>
+                        <textarea id="gradeObservations" rows="3" class="w-full border border-neutral-300 rounded-lg px-3 py-2" placeholder="Observaciones opcionales..."></textarea>
+                    </div>
+                </div>
+                
+                <div class="flex space-x-3 mt-6">
+                    <button type="button" onclick="closeGradeModal()" class="flex-1 bg-neutral-200 text-neutral-700 py-2 px-4 rounded-lg hover:bg-neutral-300 transition-colors">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="flex-1 bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary/90 transition-colors">
+                        Guardar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Overlay for mobile sidebar -->
+    <div id="sidebarOverlay" class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/dashboard.js"></script>
+    <script src="../../assets/js/notas.js"></script>
+</body>
+</html>

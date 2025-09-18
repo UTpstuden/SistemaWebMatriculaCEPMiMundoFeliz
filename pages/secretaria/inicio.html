@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Secretaría | CEP Mi Mundo Feliz</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dashboard.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#07132B",
+                        secondary: "#4A90E2",
+                        accent: "#FF6B35",
+                        neutral: {
+                            50: "#FFFFFF",
+                            100: "#F5F5F5",
+                            200: "#E5E5E5",
+                            800: "#333333",
+                        },
+                    },
+                    fontFamily: {
+                        poppins: ["Poppins", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="font-poppins bg-neutral-100">
+    
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="bg-white shadow-sm border-b border-neutral-200 px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <a href="../dashboard.html" class="text-neutral-600 hover:text-primary transition-colors">
+                        <i class="fas fa-arrow-left text-xl"></i>
+                    </a>
+                    <h1 class="text-2xl font-bold text-primary">Panel de Secretaría</h1>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <div class="text-right">
+                        <p class="text-sm text-neutral-600">Secretaría</p>
+                        <p class="font-semibold text-primary">María González</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="p-6">
+            <!-- Quick Actions -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white rounded-xl shadow-sm p-6 border border-neutral-200 hover:shadow-md transition-shadow cursor-pointer">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-neutral-600 text-sm">Nuevas Matrículas</p>
+                            <p class="text-2xl font-bold text-primary">12</p>
+                        </div>
+                        <div class="bg-green-100 p-3 rounded-full">
+                            <i class="fas fa-user-plus text-green-600 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm p-6 border border-neutral-200 hover:shadow-md transition-shadow cursor-pointer">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-neutral-600 text-sm">Pagos Pendientes</p>
+                            <p class="text-2xl font-bold text-accent">45</p>
+                        </div>
+                        <div class="bg-orange-100 p-3 rounded-full">
+                            <i class="fas fa-credit-card text-orange-600 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm p-6 border border-neutral-200 hover:shadow-md transition-shadow cursor-pointer">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-neutral-600 text-sm">Documentos Pendientes</p>
+                            <p class="text-2xl font-bold text-red-500">8</p>
+                        </div>
+                        <div class="bg-red-100 p-3 rounded-full">
+                            <i class="fas fa-file-alt text-red-600 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm p-6 border border-neutral-200 hover:shadow-md transition-shadow cursor-pointer">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-neutral-600 text-sm">Asistencias Hoy</p>
+                            <p class="text-2xl font-bold text-secondary">892</p>
+                        </div>
+                        <div class="bg-blue-100 p-3 rounded-full">
+                            <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activities -->
+            <div class="bg-white rounded-xl shadow-sm p-6 border border-neutral-200 mb-6">
+                <h3 class="text-lg font-semibold text-primary mb-4">Actividades Recientes</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-4 p-3 bg-neutral-50 rounded-lg">
+                        <div class="bg-green-100 p-2 rounded-full">
+                            <i class="fas fa-user-plus text-green-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-medium text-primary">Nueva matrícula registrada</p>
+                            <p class="text-sm text-neutral-600">Ana Sofía Martínez - 3er Grado</p>
+                        </div>
+                        <span class="text-xs text-neutral-500">Hace 15 min</span>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4 p-3 bg-neutral-50 rounded-lg">
+                        <div class="bg-blue-100 p-2 rounded-full">
+                            <i class="fas fa-credit-card text-blue-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-medium text-primary">Pago procesado</p>
+                            <p class="text-sm text-neutral-600">Carlos Rodríguez - Pensión Marzo</p>
+                        </div>
+                        <span class="text-xs text-neutral-500">Hace 32 min</span>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4 p-3 bg-neutral-50 rounded-lg">
+                        <div class="bg-orange-100 p-2 rounded-full">
+                            <i class="fas fa-file-alt text-orange-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-medium text-primary">Documento generado</p>
+                            <p class="text-sm text-neutral-600">Certificado de estudios - Luis Pérez</p>
+                        </div>
+                        <span class="text-xs text-neutral-500">Hace 1 hora</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Access Menu -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="asistencias.html" class="bg-white rounded-xl shadow-sm p-6 border border-neutral-200 hover:shadow-md transition-all hover:border-secondary group">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-blue-100 p-3 rounded-full group-hover:bg-secondary group-hover:text-white transition-colors">
+                            <i class="fas fa-calendar-check text-blue-600 text-xl group-hover:text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-primary">Gestionar Asistencias</h4>
+                            <p class="text-sm text-neutral-600">Control de asistencia diaria</p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="pagos.html" class="bg-white rounded-xl shadow-sm p-6 border border-neutral-200 hover:shadow-md transition-all hover:border-accent group">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-orange-100 p-3 rounded-full group-hover:bg-accent group-hover:text-white transition-colors">
+                            <i class="fas fa-money-bill-wave text-orange-600 text-xl group-hover:text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-primary">Gestión de Pagos</h4>
+                            <p class="text-sm text-neutral-600">Administrar pagos y pensiones</p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="estudiantes.html" class="bg-white rounded-xl shadow-sm p-6 border border-neutral-200 hover:shadow-md transition-all hover:border-green-500 group">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-green-100 p-3 rounded-full group-hover:bg-green-500 group-hover:text-white transition-colors">
+                            <i class="fas fa-users text-green-600 text-xl group-hover:text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-primary">Información Estudiantes</h4>
+                            <p class="text-sm text-neutral-600">Gestionar datos de estudiantes</p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="matriculas.html" class="bg-white rounded-xl shadow-sm p-6 border border-neutral-200 hover:shadow-md transition-all hover:border-purple-500 group">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-purple-100 p-3 rounded-full group-hover:bg-purple-500 group-hover:text-white transition-colors">
+                            <i class="fas fa-graduation-cap text-purple-600 text-xl group-hover:text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-primary">Gestión de Matrículas</h4>
+                            <p class="text-sm text-neutral-600">Procesar matrículas y documentos</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

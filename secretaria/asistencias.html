@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistencias - Secretaría | CEP Mi Mundo Feliz</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dashboard.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#07132B",
+                        secondary: "#4A90E2",
+                        accent: "#FF6B35",
+                        neutral: {
+                            50: "#FFFFFF",
+                            100: "#F5F5F5",
+                            200: "#E5E5E5",
+                            800: "#333333",
+                        },
+                    },
+                    fontFamily: {
+                        poppins: ["Poppins", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="font-poppins bg-neutral-100">
+    
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="bg-white shadow-sm border-b border-neutral-200 px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <a href="inicio.html" class="text-neutral-600 hover:text-primary transition-colors">
+                        <i class="fas fa-arrow-left text-xl"></i>
+                    </a>
+                    <h1 class="text-2xl font-bold text-primary">Gestión de Asistencias</h1>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <button onclick="openQRScanner()" class="bg-secondary text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                        <i class="fas fa-qrcode mr-2"></i>Escanear QR
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="p-6">
+            <!-- Date and Class Selection -->
+            <div class="bg-white rounded-xl shadow-sm p-6 border border-neutral-200 mb-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-2">Fecha</label>
+                        <input type="date" id="attendanceDate" class="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-2">Grado</label>
+                        <select id="gradeSelect" class="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent">
+                            <option value="">Seleccionar grado</option>
+                            <option value="1">1er Grado</option>
+                            <option value="2">2do Grado</option>
+                            <option value="3">3er Grado</option>
+                            <option value="4">4to Grado</option>
+                            <option value="5">5to Grado</option>
+                            <option value="6">6to Grado</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-2">Sección</label>
+                        <select id="sectionSelect" class="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent">
+                            <option value="">Seleccionar sección</option>
+                            <option value="A">Sección A</option>
+                            <option value="B">Sección B</option>
+                            <option value="C">Sección C</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QR Scanner Modal -->
+            <div id="qrModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+                <div class="flex items-center justify-center min-h-screen p-4">
+                    <div class="bg-white rounded-xl p-6 w-full max-w-md">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-semibold text-primary">Escanear Código QR</h3>
+                            <button onclick="closeQRScanner()" class="text-neutral-500 hover:text-neutral-700">
+                                <i class="fas fa-times text-xl"></i>
+                            </button>
+                        </div>
+                        <div class="text-center">
+                            <div id="qrReader" class="w-full h-64 bg-neutral-100 rounded-lg mb-4 flex items-center justify-center">
+                                <video id="qrVideo" class="w-full h-full object-cover rounded-lg" style="display: none;"></video>
+                                <div id="qrPlaceholder" class="text-neutral-500">
+                                    <i class="fas fa-camera text-4xl mb-2"></i>
+                                    <p>Activando cámara...</p>
+                                </div>
+                            </div>
+                            <button onclick="startQRScanner()" class="bg-secondary text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                                <i class="fas fa-play mr-2"></i>Iniciar Escáner
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Attendance List -->
+            <div class="bg-white rounded-xl shadow-sm border border-neutral-200">
+                <div class="p-6 border-b border-neutral-200">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-lg font-semibold text-primary">Lista de Asistencia</h3>
+                        <div class="flex space-x-2">
+                            <button onclick="markAllPresent()" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors text-sm">
+                                <i class="fas fa-check-double mr-1"></i>Marcar Todos Presentes
+                            </button>
+                            <button onclick="saveAttendance()" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-900 transition-colors text-sm">
+                                <i class="fas fa-save mr-1"></i>Guardar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-6">
+                    <div id="attendanceList" class="space-y-3">
+                        <!-- Attendance items will be populated by JavaScript -->
+                        <div class="text-center text-neutral-500 py-8">
+                            <i class="fas fa-users text-4xl mb-4"></i>
+                            <p>Selecciona un grado y sección para ver la lista de estudiantes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../../assets/js/asistencias.js"></script>
+</body>
+</html>

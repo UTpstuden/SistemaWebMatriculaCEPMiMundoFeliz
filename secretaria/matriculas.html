@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Matrículas - CEP Mi Mundo Feliz</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/dashboard.css" />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#07132B",
+              secondary: "#4A90E2",
+              accent: "#FF6B35",
+              neutral: {
+                50: "#FFFFFF",
+                100: "#F5F5F5",
+                200: "#E5E5E5",
+                800: "#333333",
+              },
+            },
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-poppins bg-neutral-100">
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+      <div class="sidebar-header">
+        <div class="flex items-center space-x-3">
+          <!-- Added sidebar toggle button for desktop -->
+          <button
+            onclick="toggleSidebar()"
+            class="text-white hover:text-accent transition-colors mr-2"
+          >
+            <i class="fas fa-bars text-lg"></i>
+          </button>
+          <div class="bg-white text-primary p-2 rounded-lg">
+            <i class="fas fa-graduation-cap text-xl"></i>
+          </div>
+          <div class="sidebar-title">
+            <h1 class="text-lg font-bold text-white">CEP MI MUNDO FELIZ</h1>
+            <p class="text-xs text-white/80">Sistema Educativo</p>
+          </div>
+        </div>
+        <button
+          onclick="toggleSidebar()"
+          class="text-white hover:text-accent transition-colors lg:hidden"
+        >
+          <i class="fas fa-times text-xl"></i>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav" id="sidebarNav">
+        <!-- Navigation items will be populated by JavaScript based on user role -->
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="flex items-center space-x-3 mb-4">
+          <div class="bg-white/20 p-2 rounded-full">
+            <i class="fas fa-user text-white"></i>
+          </div>
+          <div>
+            <p class="text-white font-medium" id="userDisplayName">Usuario</p>
+            <p class="text-white/70 text-sm" id="userRole">Rol</p>
+          </div>
+        </div>
+        <button
+          onclick="logout()"
+          class="w-full bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg transition-colors"
+        >
+          <i class="fas fa-sign-out-alt mr-2"></i>Cerrar Sesión
+        </button>
+      </div>
+    </div>
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Top Header -->
+      <header class="bg-white shadow-sm border-b border-neutral-200 px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-4">
+            <button
+              onclick="toggleSidebar()"
+              class="text-neutral-600 hover:text-primary transition-colors lg:hidden"
+            >
+              <i class="fas fa-bars text-xl"></i>
+            </button>
+            <h1 class="text-2xl font-bold text-primary">
+              Gestión de Matrículas
+            </h1>
+          </div>
+
+          <div class="flex items-center space-x-4">
+            <button
+              onclick="showEnrollmentModal()"
+              class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors"
+            >
+              <i class="fas fa-plus mr-2"></i>Nueva Matrícula
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <main class="p-6">
+        <!-- Statistics Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+          <div
+            class="bg-white rounded-xl shadow-sm p-6 border border-neutral-200"
+          >
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-neutral-600 text-sm">Matrículas 2024</p>
+                <p class="text-2xl font-bold text-primary">1,247</p>
+              </div>
+              <div class="bg-blue-100 p-3 rounded-full">
+                <i class="fas fa-user-graduate text-blue-600 text-xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-xl shadow-sm p-6 border border-neutral-200"
+          >
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-neutral-600 text-sm">En Proceso</p>
+                <p class="text-2xl font-bold text-orange-600">89</p>
+              </div>
+              <div class="bg-orange-100 p-3 rounded-full">
+                <i class="fas fa-clock text-orange-600 text-xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-xl shadow-sm p-6 border border-neutral-200"
+          >
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-neutral-600 text-sm">Documentos Pendientes</p>
+                <p class="text-2xl font-bold text-red-600">23</p>
+              </div>
+              <div class="bg-red-100 p-3 rounded-full">
+                <i class="fas fa-file-alt text-red-600 text-xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-xl shadow-sm p-6 border border-neutral-200"
+          >
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-neutral-600 text-sm">Comprobantes Generados</p>
+                <p class="text-2xl font-bold text-green-600">1,156</p>
+              </div>
+              <div class="bg-green-100 p-3 rounded-full">
+                <i class="fas fa-certificate text-green-600 text-xl"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div
+            class="bg-white rounded-xl shadow-sm p-6 border border-neutral-200"
+          >
+            <h3 class="text-lg font-semibold text-primary mb-4">
+              Generar Documentos
+            </h3>
+            <div class="space-y-3">
+              <button
+                onclick="generateDocument('comprobante')"
+                class="w-full bg-secondary text-white py-3 px-4 rounded-lg hover:bg-secondary/90 transition-colors flex items-center justify-center"
+              >
+                <i class="fas fa-file-pdf mr-2"></i>
+                Comprobante de Matrícula
+              </button>
+              <button
+                onclick="generateDocument('ficha')"
+                class="w-full bg-accent text-white py-3 px-4 rounded-lg hover:bg-accent/90 transition-colors flex items-center justify-center"
+              >
+                <i class="fas fa-file-alt mr-2"></i>
+                Ficha de Datos
+              </button>
+              <button
+                onclick="generateDocument('carnet')"
+                class="w-full bg-green-500 text-white py-3 px-4 rounded-lg hover:bg-green-600 transition-colors flex items-center justify-center"
+              >
+                <i class="fas fa-id-card mr-2"></i>
+                Carnet Estudiantil
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-xl shadow-sm p-6 border border-neutral-200"
+          >
+            <h3 class="text-lg font-semibold text-primary mb-4">
+              Reportes Rápidos
+            </h3>
+            <div class="space-y-3">
+              <button
+                onclick="generateReport('matriculas')"
+                class="w-full bg-purple-500 text-white py-3 px-4 rounded-lg hover:bg-purple-600 transition-colors flex items-center justify-center"
+              >
+                <i class="fas fa-chart-bar mr-2"></i>
+                Reporte de Matrículas
+              </button>
+              <button
+                onclick="generateReport('pendientes')"
+                class="w-full bg-yellow-500 text-white py-3 px-4 rounded-lg hover:bg-yellow-600 transition-colors flex items-center justify-center"
+              >
+                <i class="fas fa-exclamation-triangle mr-2"></i>
+                Documentos Pendientes
+              </button>
+              <button
+                onclick="generateReport('estadisticas')"
+                class="w-full bg-indigo-500 text-white py-3 px-4 rounded-lg hover:bg-indigo-600 transition-colors flex items-center justify-center"
+              >
+                <i class="fas fa-analytics mr-2"></i>
+                Estadísticas Generales
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-xl shadow-sm p-6 border border-neutral-200"
+          >
+            <h3 class="text-lg font-semibold text-primary mb-4">
+              Acciones Rápidas
+            </h3>
+            <div class="space-y-3">
+              <button
+                onclick="bulkActions('approve')"
+                class="w-full bg-green-500 text-white py-3 px-4 rounded-lg hover:bg-green-600 transition-colors flex items-center justify-center"
+              >
+                <i class="fas fa-check-double mr-2"></i>
+                Aprobar Pendientes
+              </button>
+              <button
+                onclick="bulkActions('notify')"
+                class="w-full bg-blue-500 text-white py-3 px-4 rounded-lg hover:bg-blue-600 transition-colors flex items-center justify-center"
+              >
+                <i class="fas fa-bell mr-2"></i>
+                Notificar Padres
+              </button>
+              <button
+                onclick="bulkActions('export')"
+                class="w-full bg-gray-500 text-white py-3 px-4 rounded-lg hover:bg-gray-600 transition-colors flex items-center justify-center"
+              >
+                <i class="fas fa-download mr-2"></i>
+                Exportar Datos
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Enrollments Table -->
+        <div class="bg-white rounded-xl shadow-sm border border-neutral-200">
+          <div class="p-6 border-b border-neutral-200">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold text-primary">
+                Solicitudes de Matrícula
+              </h3>
+              <div class="flex items-center space-x-4">
+                <select
+                  class="border border-neutral-300 rounded-lg px-3 py-2 text-sm"
+                >
+                  <option value="">Todos los estados</option>
+                  <option value="pendiente">Pendiente</option>
+                  <option value="aprobado">Aprobado</option>
+                  <option value="rechazado">Rechazado</option>
+                </select>
+                <input
+                  type="text"
+                  placeholder="Buscar estudiante..."
+                  class="border border-neutral-300 rounded-lg px-3 py-2 text-sm w-64"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full">
+              <thead class="bg-neutral-50">
+                <tr>
+                  <th
+                    class="text-left py-3 px-6 text-sm font-medium text-neutral-600"
+                  >
+                    Estudiante
+                  </th>
+                  <th
+                    class="text-left py-3 px-6 text-sm font-medium text-neutral-600"
+                  >
+                    Grado
+                  </th>
+                  <th
+                    class="text-left py-3 px-6 text-sm font-medium text-neutral-600"
+                  >
+                    Fecha Solicitud
+                  </th>
+                  <th
+                    class="text-left py-3 px-6 text-sm font-medium text-neutral-600"
+                  >
+                    Estado
+                  </th>
+                  <th
+                    class="text-left py-3 px-6 text-sm font-medium text-neutral-600"
+                  >
+                    Documentos
+                  </th>
+                  <th
+                    class="text-left py-3 px-6 text-sm font-medium text-neutral-600"
+                  >
+                    Acciones
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="enrollmentsTableBody">
+                <!-- Enrollments will be populated by JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Enrollment Modal -->
+    <div
+      id="enrollmentModal"
+      class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50"
+    >
+      <div
+        class="bg-white rounded-xl p-6 w-full max-w-2xl mx-4 max-h-[90vh] overflow-y-auto"
+      >
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-lg font-semibold text-primary">Nueva Matrícula</h3>
+          <button
+            onclick="closeEnrollmentModal()"
+            class="text-neutral-400 hover:text-neutral-600"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <form id="enrollmentForm">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-neutral-700 mb-1"
+                >Nombres</label
+              >
+              <input
+                type="text"
+                id="studentFirstName"
+                class="w-full border border-neutral-300 rounded-lg px-3 py-2"
+                required
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-neutral-700 mb-1"
+                >Apellidos</label
+              >
+              <input
+                type="text"
+                id="studentLastName"
+                class="w-full border border-neutral-300 rounded-lg px-3 py-2"
+                required
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-neutral-700 mb-1"
+                >DNI</label
+              >
+              <input
+                type="text"
+                id="studentDNI"
+                class="w-full border border-neutral-300 rounded-lg px-3 py-2"
+                required
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-neutral-700 mb-1"
+                >Fecha de Nacimiento</label
+              >
+              <input
+                type="date"
+                id="studentBirthDate"
+                class="w-full border border-neutral-300 rounded-lg px-3 py-2"
+                required
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-neutral-700 mb-1"
+                >Grado</label
+              >
+              <select
+                id="studentGrade"
+                class="w-full border border-neutral-300 rounded-lg px-3 py-2"
+                required
+              >
+                <option value="">Seleccionar grado</option>
+                <option value="1">1° Primaria</option>
+                <option value="2">2° Primaria</option>
+                <option value="3">3° Primaria</option>
+                <option value="4">4° Primaria</option>
+                <option value="5">5° Primaria</option>
+                <option value="6">6° Primaria</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-neutral-700 mb-1"
+                >Sección</label
+              >
+              <select
+                id="studentSection"
+                class="w-full border border-neutral-300 rounded-lg px-3 py-2"
+                required
+              >
+                <option value="">Seleccionar sección</option>
+                <option value="A">Sección A</option>
+                <option value="B">Sección B</option>
+                <option value="C">Sección C</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mt-6">
+            <h4 class="text-md font-semibold text-primary mb-4">
+              Información del Apoderado
+            </h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium text-neutral-700 mb-1"
+                  >Nombre del Apoderado</label
+                >
+                <input
+                  type="text"
+                  id="parentName"
+                  class="w-full border border-neutral-300 rounded-lg px-3 py-2"
+                  required
+                />
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-neutral-700 mb-1"
+                  >DNI del Apoderado</label
+                >
+                <input
+                  type="text"
+                  id="parentDNI"
+                  class="w-full border border-neutral-300 rounded-lg px-3 py-2"
+                  required
+                />
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-neutral-700 mb-1"
+                  >Teléfono</label
+                >
+                <input
+                  type="tel"
+                  id="parentPhone"
+                  class="w-full border border-neutral-300 rounded-lg px-3 py-2"
+                  required
+                />
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-neutral-700 mb-1"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="parentEmail"
+                  class="w-full border border-neutral-300 rounded-lg px-3 py-2"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="flex space-x-3 mt-6">
+            <button
+              type="button"
+              onclick="closeEnrollmentModal()"
+              class="flex-1 bg-neutral-200 text-neutral-700 py-2 px-4 rounded-lg hover:bg-neutral-300 transition-colors"
+            >
+              Cancelar
+            </button>
+            <button
+              type="submit"
+              class="flex-1 bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary/90 transition-colors"
+            >
+              Registrar Matrícula
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Overlay for mobile sidebar -->
+    <div
+      id="sidebarOverlay"
+      class="sidebar-overlay"
+      onclick="toggleSidebar()"
+    ></div>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/dashboard.js"></script>
+    <script src="../../assets/js/matriculas.js"></script>
+  </body>
+</html>

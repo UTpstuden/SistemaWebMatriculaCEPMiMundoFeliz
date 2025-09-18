@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistencia QR | CEP Mi Mundo Feliz</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#07132B",
+                        secondary: "#4A90E2",
+                        accent: "#FF6B35",
+                        neutral: {
+                            50: "#FFFFFF",
+                            100: "#F5F5F5",
+                            200: "#E5E5E5",
+                            800: "#333333",
+                        },
+                    },
+                    fontFamily: {
+                        poppins: ["Poppins", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="font-poppins bg-gradient-to-br from-primary to-secondary min-h-screen">
+    
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <div class="bg-white rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center shadow-lg">
+                <i class="fas fa-qrcode text-primary text-3xl"></i>
+            </div>
+            <h1 class="text-3xl font-bold text-white mb-2">Registro de Asistencia</h1>
+            <p class="text-white/80">Escanea el código QR para registrar tu asistencia</p>
+        </div>
+
+        <!-- QR Scanner Card -->
+        <div class="max-w-md mx-auto">
+            <div class="bg-white rounded-2xl shadow-xl p-6">
+                <!-- Camera View -->
+                <div class="relative mb-6">
+                    <div id="qrScannerContainer" class="w-full h-64 bg-neutral-100 rounded-xl overflow-hidden relative">
+                        <video id="qrVideo" class="w-full h-full object-cover" style="display: none;"></video>
+                        <canvas id="qrCanvas" class="absolute inset-0 w-full h-full" style="display: none;"></canvas>
+                        
+                        <!-- Placeholder -->
+                        <div id="cameraPlaceholder" class="flex items-center justify-center h-full text-neutral-500">
+                            <div class="text-center">
+                                <i class="fas fa-camera text-4xl mb-3"></i>
+                                <p class="font-medium">Toca para activar la cámara</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Scanning Overlay -->
+                        <div id="scanningOverlay" class="absolute inset-0 flex items-center justify-center" style="display: none;">
+                            <div class="border-2 border-accent w-48 h-48 rounded-lg relative">
+                                <div class="absolute top-0 left-0 w-6 h-6 border-t-4 border-l-4 border-accent rounded-tl-lg"></div>
+                                <div class="absolute top-0 right-0 w-6 h-6 border-t-4 border-r-4 border-accent rounded-tr-lg"></div>
+                                <div class="absolute bottom-0 left-0 w-6 h-6 border-b-4 border-l-4 border-accent rounded-bl-lg"></div>
+                                <div class="absolute bottom-0 right-0 w-6 h-6 border-b-4 border-r-4 border-accent rounded-br-lg"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <div class="space-y-4">
+                    <button id="startScanBtn" onclick="startCamera()" class="w-full bg-secondary text-white py-3 px-6 rounded-xl font-semibold hover:bg-blue-600 transition-colors">
+                        <i class="fas fa-camera mr-2"></i>Activar Cámara
+                    </button>
+                    
+                    <button id="stopScanBtn" onclick="stopCamera()" class="w-full bg-red-500 text-white py-3 px-6 rounded-xl font-semibold hover:bg-red-600 transition-colors" style="display: none;">
+                        <i class="fas fa-stop mr-2"></i>Detener Cámara
+                    </button>
+                </div>
+
+                <!-- Status Messages -->
+                <div id="statusMessage" class="mt-4 p-3 rounded-lg text-center" style="display: none;">
+                    <!-- Status messages will be shown here -->
+                </div>
+            </div>
+
+            <!-- Instructions -->
+            <div class="mt-6 bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                <h3 class="text-white font-semibold mb-2">Instrucciones:</h3>
+                <ul class="text-white/80 text-sm space-y-1">
+                    <li>• Activa la cámara tocando el botón</li>
+                    <li>• Apunta la cámara hacia el código QR</li>
+                    <li>• Mantén el código dentro del marco</li>
+                    <li>• El registro se realizará automáticamente</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/qr-scanner.js"></script>
+</body>
+</html>

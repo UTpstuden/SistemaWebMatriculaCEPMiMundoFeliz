@@ -1,0 +1,152 @@
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 280px;
+  background: linear-gradient(135deg, #07132b 0%, #4a90e2 100%);
+  /* Updated sidebar to be visible by default on desktop and collapsible */
+  transform: translateX(0);
+  transition: transform 0.3s ease, width 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Added collapsed state for sidebar */
+.sidebar.collapsed {
+  width: 70px;
+}
+
+.sidebar.collapsed .sidebar-title,
+.sidebar.collapsed .sidebar-footer div:last-child {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.sidebar.collapsed .sidebar-item span {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Mobile sidebar behavior */
+@media (max-width: 1023px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+}
+
+.sidebar-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Added transition for sidebar title */
+.sidebar-title {
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: 1rem 0;
+  overflow-y: auto;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+  cursor: pointer;
+}
+
+.sidebar-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.sidebar-item.active {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border-left-color: #ff6b35;
+}
+
+.sidebar-item i {
+  width: 20px;
+  margin-right: 0.75rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* Added transition for sidebar item text */
+.sidebar-item span {
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.sidebar-footer {
+  padding: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Main Content */
+.main-content {
+  /* Updated margin to work with collapsible sidebar */
+  margin-left: 280px;
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+}
+
+/* Added collapsed main content state */
+.main-content.sidebar-collapsed {
+  margin-left: 70px;
+}
+
+/* Sidebar Overlay */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.sidebar-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+  .sidebar-overlay {
+    display: none;
+  }
+}
+
+/* Updated mobile responsive behavior */
+@media (max-width: 1023px) {
+  .main-content,
+  .main-content.sidebar-collapsed {
+    margin-left: 0;
+  }
+
+  .sidebar {
+    width: 100%;
+    max-width: 320px;
+  }
+}
